@@ -15,7 +15,10 @@ p {
 p a {
   text-decoration: underline;
 }
-h1,
+h1 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 800; color: #33adff;
+}
 h2,
 h3,
 h4,
