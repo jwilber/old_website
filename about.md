@@ -53,11 +53,11 @@ For example, the response values in our dataset may refer to survival times afte
 
 The data is defined and showcased below:
 
-{% highlight R %}
+```
 ourData <- data.frame(SURVIVAL = c(2,6,8,10,10,12,12,14,14,16,16,16,18,20,26,30,34,38,40,48,2,4,4,6,8,8,10,10,12,14,18,18,20,22,32,36,46,46,48,58,58,66,72,82),
 TREATMENT = c(rep(FALSE,22),rep(TRUE,22)))
 ourData
-{% endhighlight %}
+```
 
 We'll use the following hypothesis scheme:
 
