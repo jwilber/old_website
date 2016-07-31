@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Jared Wilber"
+title: "Permutation Test"
 author: Jared Wilber
 output: html_document
 theme: cosmo
@@ -13,8 +13,7 @@ permalink: /about/
 
 
 
-# Permutation Test
-## Explanation and Implementation in R
+# Explanation and Implementation in R
 
 
 <!-- ![image-title-here](/images/growth.png =100x100){:class="img-responsive"} -->
