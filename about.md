@@ -97,7 +97,7 @@ currentStat <- diffMeans(ourData$SURVIVAL, ourData$TREATMENT)
 cat("Initial Test Statistic: ", currentStat)
 ```
 
-<img src="/images/teststat1.png" width="50px" height="400px" />
+<img src="/images/teststat1.png" />
 
 ### 2. Permute Data and Obtain Sampling Distribution
 
@@ -175,7 +175,7 @@ p.val <- permutationTest(ourData$SURVIVAL, ourData$TREATMENT, testStat = diffMea
 cat("p-value: ", p.val)
 ```
 
-<img src="/images/pvalues1.png" width="50px" height="400px" />
+<img src="/images/pvalues1.png" />
 
 So, our p-value is 0.03. 
 
@@ -232,7 +232,7 @@ cat(" p-value (from coin package) : ", round(pvalc,2), "\n",
 
 ```
 
-<img src="/images/pvalues3.png" width="50px" height="400px" />
+<img src="/images/pvalues3.png" />
 
 Our implemented permutation test performed just as well as the packages' respective permutation tests. Thus, feel free to use whatever you prefer for your own analysis!
 
