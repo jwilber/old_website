@@ -1,37 +1,13 @@
 ---
 layout: page
-title: About
+title: Permutation Test: Explained and Implementation (R)
+author: Jared Wilber
 permalink: /about/
 ---
 
 
 
----
-title: "Permutation Test: Explained and Implementation (R)"
-author: Jared Wilber
-output: html_document
-theme: cosmo
-highlight: neon
-  
----
 
-
-```{r echo=FALSE, results='hide', warning='hide'}
-
-suppressWarnings(library(ggplot2))
-suppressWarnings(library(ggthemes))
-suppressWarnings(library(perm))
-library(ggplot2)
-library(ggthemes)
-library(reshape2)
-suppressMessages(library(coin))
-suppressMessages(library(perm))
-#setwd("/Users/jared/Downloads")
-# Get data
-#bdata <- read.csv(file='breastCancerSurvival.csv', header=T)
-#bdata$GROUP <- factor(bdata$GROUP, levels = c("THERAPY", "CONTROL"))
-boolColors <- as.character(c("TRUE"="lightcoral", "FALSE"="skyblue1"))
-boolScale <- scale_colour_manual(name="TREATMENT", values=boolColors)
 
 
 ```
@@ -74,7 +50,7 @@ For example, the response values in our dataset may refer to survival times afte
 
 The data is defined and showcased below:
 
-```{r}
+
 ourData <- data.frame(SURVIVAL = c(2,6,8,10,10,12,12,14,14,16,16,16,18,20,26,30,34,38,40,48,2,4,4,6,8,8,10,10,12,14,18,18,20,22,32,36,46,46,48,58,58,66,72,82),
 TREATMENT = c(rep(FALSE,22),rep(TRUE,22)))
 ourData
@@ -87,7 +63,7 @@ We'll use the following hypothesis scheme:
 
 When performing any analysis, it's always a good idea to carry out some exploratory data analysis (EDA). For this example, we'll be brief and create a plot to visualize what we expect the outcome of our test will be:
 
-```{r echo=FALSE}
+```
 # Box Plot
 ggplot(ourData, aes(y=SURVIVAL, x=TREATMENT)) + geom_boxplot(aes(color=TREATMENT)) +
   stat_summary(fun.y="mean", geom="point", shape=23, size=3,fill='black') +
