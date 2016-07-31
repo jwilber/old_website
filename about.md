@@ -7,7 +7,7 @@ title: About Me
 	<h1 class="pageTitle">About Me</h1>
 	<img src="{{ '/assets/img/touring.jpg' | prepend: site.baseurl }}" alt=""> 
 	<p class="intro">My name is Jared Wilber and I am a senior studying statistics at UC Berkeley.</p>
-	<p>I created this website so that I could post my own content related data science (i.e. stuff related to statistics, algorithms, visualizations, etc.) . I use primarily R and Python.</p>
+	<p>I created this website so that I could post my own content related to data science. Specifically, that consists of  stuff related to statistics, algorithms, visualizations, or anything else I find interesting in the domain. I use primarily R and Python.</p>
 	<p> Aside from the aforemention academia stuff, I also enjoy surfing, fitness, skateboarding, reading, traveling, music, and, last but not least, crying alone in cold showers.</p>
 	
 	
