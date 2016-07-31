@@ -18,7 +18,8 @@ permalink: /about/
 
 # Introduction
 
-![image-title-here](/images/growth.png =50x50){:class="img-responsive"}
+
+![image-title-here](/images/growth.png =100x100){:class="img-responsive"}
 
 The permutation test, also known as the randomization test, is a nonparametric method of statistical inference that tests a specific null hypothesis that the treatment levels we are comparing are completely equivalent and serve only as labels. In particular, the responses we observed for our units would be the same no matter which treatments had been applied.
 
