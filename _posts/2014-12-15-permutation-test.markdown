@@ -52,11 +52,11 @@ For example, the response values in our dataset may refer to survival times afte
 
 The data is defined and showcased below:
 
-```
+{% highlight R %}
 ourData <- data.frame(SURVIVAL = c(2,6,8,10,10,12,12,14,14,16,16,16,18,20,26,30,34,38,40,48,2,4,4,6,8,8,10,10,12,14,18,18,20,22,32,36,46,46,48,58,58,66,72,82),
 TREATMENT = c(rep(FALSE,22),rep(TRUE,22)))
 ourData
-```
+{% endhighlight %}
 
 <img src="/images/dataset1.png" />
 
@@ -75,21 +75,22 @@ The difference in centrality and spread certainly give credence to the hypothesi
 ### 1. Come up with test statistic
 The first step of a permutation test is to come up with a relevant test-statistic. Recall that a test statistic is some numerical summary of our data that can be used during a statistical test to distinguish the null hypothesis from the alternative hypothesis. For a permutation test we can use essentially anything for our test statistic. The goal of our analysis is to detect any difference between the treatment and control groups. Therefore, we'll employ the difference of mean values between the two groups as our test statistic. 
 
-```
+{% highlight ruby %}
 diffMeans <- function(data, hasTrt){
   # computes our test statistics: the difference of means
   # hasTrt: boolean vector, TRUE if has treatment
   test_stat <- mean(data[hasTrt]) - mean(data[!hasTrt])
   return(test_stat)
 }
+{% endhighlight %}
 ```
 
 We calculate the test statistic for our initial data set, which we'll utilize later in our analysis.
 
-```
+{% highlight R %}
 currentStat <- diffMeans(ourData$SURVIVAL, ourData$TREATMENT)
 cat("Initial Test Statistic: ", currentStat)
-```
+{% endhighlight %}
 
 <img src="/images/teststat1.png" />
 
@@ -111,7 +112,7 @@ We then calculate our test statistic for each generated sample. In this way, we 
 
 
 
-```
+{% highlight R %}
 simPermDsn <- function(data, hasTrt, testStat, k=10000){
   # Simulates the permutation distribution for our data
   # hasTrt: boolean indicating whether group is treatment or control
@@ -122,7 +123,8 @@ simPermDsn <- function(data, hasTrt, testStat, k=10000){
                       function(x) {testStat(x, hasTrt)})
   return( test_stats)
 }
-```
+{% endhighlight %}
+
 
 The above code simple creates k permutations of our data
 
@@ -143,7 +145,7 @@ Recall that our hypothesis was of the "two-way" form. Thus, in my code, I look f
 
 To perform our test, we'll encapsulate everything into one function as follows:
 
-```
+{% highlight R %}
 permutationTest <- function(data, hasTrt, testStat, k=1000){
   # Performs permutation test for our data, given some pre-selected
   # test statistic, testStat
@@ -155,7 +157,8 @@ permutationTest <- function(data, hasTrt, testStat, k=1000){
   
   return(pValue)
 }
-```
+{% endhighlight %}
+
 
 The first two lines of code in the above function define our initial test statistic and create our sampling distribution by calling previously defined functions. The third line calculates our p-value via the process stated above.
 
@@ -163,11 +166,11 @@ Congratulations! Now that we have defined our function, we've successfully imple
 
 So what are our results? Let's run our function on our data to find out:
 
-```
+{% highlight R %}
 set.seed(619)
 p.val <- permutationTest(ourData$SURVIVAL, ourData$TREATMENT, testStat = diffMeans)
 cat("p-value: ", p.val)
-```
+{% endhighlight %}
 
 <img src="/images/pvalues1.png" />
 
@@ -185,7 +188,7 @@ For sanity, we can check how our test agrees with the output of a parametric alt
  We'll implement the test ourselves:
 
 
-```
+{% highlight R %}
 tTest <- function(data, hasTrtment){
   m         <- sum(hasTrtment) # Treatment group size
   n         <- sum(!hasTrtment) # Control group size
@@ -206,13 +209,13 @@ tTest <- function(data, hasTrtment){
 }
 
 tTest(ourData$SURVIVAL, ourData$TREATMENT)
-```
+{% endhighlight %}
 
 As expected, both tests yield significant results, thus leading to the same conclusion: we reject the null hypothesis and conclude that the treatment does have a significant effect on Survival time post-operation.
 
 Note that, while it's nice to be able to implement your own permutation test, it's not always necessary. In particular, I know of two R packages: **coin** and **perm**, each of which allows us to conduct a permutation test wit a single line of code: 
 
-```
+{% highlight R %}
 # library(coin)
 pvalc <- pvalue(independence_test(SURVIVAL~TREATMENT, data=ourData))
 
@@ -224,7 +227,7 @@ cat(" p-value (from coin package) : ", round(pvalc,2), "\n",
     "p-value (from perm package) : ", round(pvalp,2), "\n",
     "p-value (our implementation): ", p.val)
 
-```
+{% endhighlight %}
 
 <img src="/images/pvalues3.png" />
 
