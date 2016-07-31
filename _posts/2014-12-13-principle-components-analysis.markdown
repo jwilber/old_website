@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Principal Components Analysist"
+title:  "Principal Components Analysis"
 date:   2014-12-13
 ---
 
