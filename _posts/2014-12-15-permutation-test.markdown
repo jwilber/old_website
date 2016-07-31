@@ -23,7 +23,7 @@ The permutation test p-value is the probability (under the null
 randomization distribution) of getting a test statistic as extreme or
 more extreme than the one we observed.
 
-An expression for a two-tailed permutation test is shown below.
+An expression for a two-tailed permutation test consisting of B permutations is shown below:
 
 <img src="/images/perm.png" />
 
