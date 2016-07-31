@@ -11,8 +11,7 @@ permalink: /about/
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 =======
 >>>>>>> origin/master
 
