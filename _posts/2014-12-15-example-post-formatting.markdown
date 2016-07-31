@@ -2,32 +2,13 @@
 layout: post
 title:  "Permutation Test: Explanation and Implementation in R"
 date:   2014-12-15
+theme: cosmo
 ---
 
 <p class="intro"><span class="dropcap">T</span>his post explains what a permutation test is, how it is performed, and why you might want to utilize it. It also shows you how to implement your own permutation test from scratch in R, as well as how to use pre-defined permutation tests in existing packages</p>
 
 
----
-layout: page
-title: "Permutation Test"
-author: Jared Wilber
-output: html_document
-theme: cosmo
-highlight: neon
-permalink: /about/
----
-
-
-
-
-
-
-# Explanation and Implementation in R
-
-
-<!-- ![image-title-here](/images/growth.png =100x100){:class="img-responsive"} -->
-
-<!-- <img src=/images/growth.png width=100 height=100 /> -->
+# Introduction
 
 The permutation test, also known as the randomization test, is a nonparametric method of statistical inference that tests a specific null hypothesis that the treatment levels we are comparing are completely equivalent and serve only as labels. In particular, the responses we observed for our units would be the same no matter which treatments had been applied.
 
@@ -53,7 +34,7 @@ Carrying out a permutation test consists of 3 steps:
   
 In what follows, I'll go into each step in detail and, along the way, reveal how one could implement each step in R.
 
-# The Permutation Test: Process and R Implementation
+# R Implementation
 
 ### Our Data and Brief EDA
 
