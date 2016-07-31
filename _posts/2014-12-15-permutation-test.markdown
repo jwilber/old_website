@@ -126,14 +126,14 @@ simPermDsn <- function(data, hasTrt, testStat, k=10000){
 {% endhighlight %}
 
 
-The above code simple creates k permutations of our data
+The above code simple creates k permutations of our data.
 
-For our test statistic, we observe the following distribution:
+For our test statistic, we observe the following distribution of values:
 
 <img src="/images/hist1.png" width="450px" height="450px" />
 
 
-I should also breifly that while the two are often confused,the above sampling scheme is not the same process as bootstrapping (which samples with replacement).
+I should also briefly clarify that while the two are often confused,the above sampling scheme is not the same as bootstrapping. Bootstrapping samples with replacement.
 
 
 ### 3. Conduct Permutation Test and Obtain P-Value
