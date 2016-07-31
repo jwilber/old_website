@@ -8,7 +8,7 @@ title: Contact Long Haul
   <div class="contactContent">
     <p class="intro">You can use this page to contact me</p>
     <p>The form is provided by <a href="http://formspree.io/">Formspree.</a></p>
-    <p>If you have questions about the theme feel free to <a href="mailto:j.wilber92@gmail.com">email me</a> or create an issue on <a href="https://github.com/jwilber/long-haul">GitHub</a>. Enjoy!</p>
+    <p>If you have questions or criticisms about any of the posts feel free to <a href="mailto:j.wilber92@gmail.com">email me</a> or create an issue on <a href="https://github.com/jwilber/long-haul">GitHub</a>. Enjoy!</p>
   </div>
   <form action="http://formspree.io/your@mail.com" method="POST">
     <label for="name">Name</label>    
