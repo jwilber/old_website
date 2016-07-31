@@ -74,11 +74,9 @@ We'll use the following hypothesis scheme:
   - Alternative Hypothesis: The means for the Control (FALSE) and Treatment (TRUE) groups are different; i.e. the treatment does have some effect on survival times.
 
 When performing any analysis, it's always a good idea to carry out some exploratory data analysis (EDA). For this example, we'll be brief and create a plot to visualize what we expect the outcome of our test will be:
-<img src="/images/box.png" width="300px" height="300px" />
 
-```
-INSERT BOXPLOT
-```
+<img src="/images/box.png" width="300px" height="300px" />
+`
 
 The difference in centrality and spread certainly give credence to the hypothesis that the two groups come from different distributions.  Of course, we don't know for sure until we perform our test. Let's dive into our analysis and find out for sure.
 
@@ -108,9 +106,6 @@ Once we've decided upon our test statistic, we permute our data. Permuting the d
 
 <img src="/images/growth.png" width="200px" height="200px" />
 
-```
-<img src="/images/growth.png" width="200px" height="200px" />
-```
 
 
 Thus, even for moderately sized n, computing all permutations quickly becomes unfeasible. For example, factorial(15) is an astronomical 1,307,674,368,000. In comparison, exp(15) is a tiny 3,269,017.
@@ -141,10 +136,6 @@ The above code simple creates k permutations of our data
 For our test statistic, we observe the following distribution:
 
 <img src="/images/hist1.png" width="400px" height="400px" />
-
-```
-INSERT PLOT 
-```
 
 
 I should also breifly that while the two are often confused,the above sampling scheme is not the same process as bootstrapping (which samples with replacement).
@@ -190,13 +181,6 @@ So, our p-value is 0.03.
 We can visualize this by observing our original test statistic's location in a sampled test statistic's distribution (symbolized by the vertical blue lines below). Recall that we calculated this earlier, obtaining a value of ~ 13:
 
 <img src="/images/hist2.png" width="200px" height="200px" />
-
-```
-INSERT PLOT
-
-<img src="/images/growth.png" width="200px" height="200px" />
-
-```
 
 This test statistic looks pretty deep in the tails of our distribution. In fact, with a significance level of 0.05, our p-value is significant. Thus we reject our null hypothesis and conclude that there is a difference provided by the treatment.
 
