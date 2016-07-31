@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Permutation Test: Explained and Implementation (R)
+title: "Jared Wilber"
 author: Jared Wilber
 output: html_document
 theme: cosmo
