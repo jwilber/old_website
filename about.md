@@ -13,8 +13,7 @@ permalink: /about/
 
 
 =======
->>>>>>> origin/master
-
+>>>>>>> or
 
 # Introduction
 
