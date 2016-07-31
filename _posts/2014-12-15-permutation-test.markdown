@@ -10,9 +10,9 @@ theme: cosmo
 
 # Introduction
 
-The permutation test, also known as the randomization test, is a nonparametric method of statistical inference that tests a specific null hypothesis that the treatment levels we are comparing are completely equivalent and serve only as labels. In particular, the responses we observed for our units would be the same no matter which treatments had been applied.
+The permutation test, also known as the randomization test, is a nonparametric method of statistical inference that tests a specific null hypothesis that the treatment levels we are comparing are completely equivalent and serve only as labels; i.e. that the responses we observed for our units would be the same no matter which treatments had been applied.
 
-Put more simply, when considering a permutation/randomization based analysis, our null hypothesis dictates that our response values are equally likely of ending up in any treatment group. That is, if the null hypothesis is true, permuting our data will yield no effect on the outcome. 
+Put more simply, when considering a permutation/randomization based analysis, our null hypothesis dictates that our response values are equally likely of ending up in any treatment group. Then, under that hypothesis, permuting our data will yield no effect on the outcome. 
 
 Our alternative hypothesis, then, dictates that the data do come from different distributions; that there does exist some difference between treatments for one or more subjects.
 
@@ -22,6 +22,10 @@ the data and then get the distribution of that test statistic under the permutat
 The permutation test p-value is the probability (under the null
 randomization distribution) of getting a test statistic as extreme or
 more extreme than the one we observed.
+
+An expression for a two-tailed permutation test is shown below.
+
+<img src="/images/perm.png" />
 
 
 Unlike the more traditional statistical tests (e.g. t-tests or F-tests), the permutation test relies only on the performed randomization and, as such, we can ignore many annoying assumptions often required for linear models (such as normality, heteroscedastic residuals, etc.). That said, our data does need to meet the assumption of exchangeability (i.e. can we permute the data without affecting the distribution?) You can visit the following link for more information on exchangeability: https://en.wikipedia.org/wiki/Exchangeable_random_variables
