@@ -12,10 +12,9 @@ permalink: /about/
 
 
 
-=======
->>>>>>> or
 
-# Introduction
+# Permutation Test
+## Explanation and Implementation in R
 
 
 <!-- ![image-title-here](/images/growth.png =100x100){:class="img-responsive"} -->
