@@ -216,7 +216,7 @@ tTest(ourData$SURVIVAL, ourData$TREATMENT)
 
 As expected, both tests yield significant results, thus leading to the same conclusion: we reject the null hypothesis and conclude that the treatment does have a significant effect on Survival time post-operation.
 
-Note that, while it's nice to be able to implement your own permutation test, it's not always necessary. In particular, I know of two packages in R, **coin** and **perm**, each of which allows us to conduct a permutation test wit a single line of code: 
+Note that, while it's nice to be able to implement your own permutation test, it's not always necessary. In particular, I know of two R packages: **coin** and **perm**, each of which allows us to conduct a permutation test wit a single line of code: 
 
 ```
 # library(coin)
