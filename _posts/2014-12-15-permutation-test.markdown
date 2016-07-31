@@ -58,6 +58,8 @@ TREATMENT = c(rep(FALSE,22),rep(TRUE,22)))
 ourData
 ```
 
+<img src="/images/dataset1.png" />
+
 We'll use the following hypothesis scheme:
 
   - Null Hypothesis: The means for the Control (FALSE) and Treatment (TRUE) groups are the same; i.e. the treatment has no effect on survival outcome.
