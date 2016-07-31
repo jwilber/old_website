@@ -74,6 +74,7 @@ We'll use the following hypothesis scheme:
   - Alternative Hypothesis: The means for the Control (FALSE) and Treatment (TRUE) groups are different; i.e. the treatment does have some effect on survival times.
 
 When performing any analysis, it's always a good idea to carry out some exploratory data analysis (EDA). For this example, we'll be brief and create a plot to visualize what we expect the outcome of our test will be:
+<img src="/images/box.png" width="300px" height="300px" />
 
 ```
 INSERT BOXPLOT
@@ -105,8 +106,10 @@ INSERT TEST STATISTIC
 
 Once we've decided upon our test statistic, we permute our data. Permuting the data is just a fancy way of saying to rearrange or shuffle the data in all possible manners. As our null hypothesis states that shuffling the data should have no effect, this process creates the backbone of our permutation test: our randomization distribution. Recall the number of permutations for n elements is factorial(n), a function grows faster than even exponential(n). See below plot.
 
+<img src="/images/growth.png" width="200px" height="200px" />
+
 ```
-INSERT PLOT
+<img src="/images/growth.png" width="200px" height="200px" />
 ```
 
 
@@ -136,6 +139,8 @@ simPermDsn <- function(data, hasTrt, testStat, k=10000){
 The above code simple creates k permutations of our data
 
 For our test statistic, we observe the following distribution:
+
+<img src="/images/hist1.png" width="400px" height="400px" />
 
 ```
 INSERT PLOT 
@@ -184,8 +189,13 @@ So, our p-value is 0.03.
 
 We can visualize this by observing our original test statistic's location in a sampled test statistic's distribution (symbolized by the vertical blue lines below). Recall that we calculated this earlier, obtaining a value of ~ 13:
 
+<img src="/images/hist2.png" width="200px" height="200px" />
+
 ```
 INSERT PLOT
+
+<img src="/images/growth.png" width="200px" height="200px" />
+
 ```
 
 This test statistic looks pretty deep in the tails of our distribution. In fact, with a significance level of 0.05, our p-value is significant. Thus we reject our null hypothesis and conclude that there is a difference provided by the treatment.
