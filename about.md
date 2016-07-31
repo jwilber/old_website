@@ -7,10 +7,7 @@ permalink: /about/
 
 
 
-
-
-
-```
+# Introduction 
 
 The permutation test, also known as the randomization test, is a nonparametric method of statistical inference that tests a specific null hypothesis that the treatment levels we are comparing are completely equivalent and serve only as labels. In particular, the responses we observed for our units would be the same no matter which treatments had been applied.
 
@@ -36,7 +33,7 @@ Carrying out a permutation test consists of 3 steps:
   
 In what follows, I'll go into each step in detail and, along the way, reveal how one could implement each step in R.
 
-## The Permutation Test: Process and R Implementation
+# The Permutation Test: Process and R Implementation
 
 ### Our Data and Brief EDA
 
