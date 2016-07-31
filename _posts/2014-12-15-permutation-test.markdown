@@ -83,7 +83,7 @@ diffMeans <- function(data, hasTrt){
   return(test_stat)
 }
 {% endhighlight %}
-```
+
 
 We calculate the test statistic for our initial data set, which we'll utilize later in our analysis.
 
