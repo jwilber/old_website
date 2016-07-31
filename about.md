@@ -2,6 +2,9 @@
 layout: page
 title: Permutation Test: Explained and Implementation (R)
 author: Jared Wilber
+output: html_document
+theme: cosmo
+highlight: neon
 permalink: /about/
 ---
 
