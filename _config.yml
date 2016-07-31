@@ -1,8 +1,8 @@
-title: Jared's Blog
+title: Jared Wilber
 subtitle: h
 description: Personal Site for anything Data Science, Statistics, etc.
 
-url: http://jwilber.github.io
+url: https://jwilber.github.io
 baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
