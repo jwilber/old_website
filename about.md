@@ -7,7 +7,10 @@ permalink: /about/
 
 
 
-# Introduction 
+
+
+
+# Introduction
 
 The permutation test, also known as the randomization test, is a nonparametric method of statistical inference that tests a specific null hypothesis that the treatment levels we are comparing are completely equivalent and serve only as labels. In particular, the responses we observed for our units would be the same no matter which treatments had been applied.
 
@@ -47,7 +50,7 @@ For example, the response values in our dataset may refer to survival times afte
 
 The data is defined and showcased below:
 
-
+```
 ourData <- data.frame(SURVIVAL = c(2,6,8,10,10,12,12,14,14,16,16,16,18,20,26,30,34,38,40,48,2,4,4,6,8,8,10,10,12,14,18,18,20,22,32,36,46,46,48,58,58,66,72,82),
 TREATMENT = c(rep(FALSE,22),rep(TRUE,22)))
 ourData
@@ -61,10 +64,7 @@ We'll use the following hypothesis scheme:
 When performing any analysis, it's always a good idea to carry out some exploratory data analysis (EDA). For this example, we'll be brief and create a plot to visualize what we expect the outcome of our test will be:
 
 ```
-# Box Plot
-ggplot(ourData, aes(y=SURVIVAL, x=TREATMENT)) + geom_boxplot(aes(color=TREATMENT)) +
-  stat_summary(fun.y="mean", geom="point", shape=23, size=3,fill='black') +
-  ggtitle("Survival Boxplots by Group") + theme_solarized_2() + boolScale
+INSERT BOXPLOT
 ```
 
 The difference in centrality and spread certainly give credence to the hypothesis that the two groups come from different distributions.  Of course, we don't know for sure until we perform our test. Let's dive into our analysis and find out for sure.
@@ -87,20 +87,14 @@ We calculate the test statistic for our initial data set, which we'll utilize la
 currentStat <- diffMeans(ourData$SURVIVAL, ourData$TREATMENT)
 cat("Initial Test Statistic: ", currentStat)
 ```
-
+INSERT TEST STATISTIC
 
 ### 2. Permute Data and Obtain Sampling Distribution
 
 Once we've decided upon our test statistic, we permute our data. Permuting the data is just a fancy way of saying to rearrange or shuffle the data in all possible manners. As our null hypothesis states that shuffling the data should have no effect, this process creates the backbone of our permutation test: our randomization distribution. Recall the number of permutations for n elements is factorial(n), a function grows faster than even exponential(n). See below plot.
 
 ```{r echo=FALSE, warnings='hide'}
-suppressWarnings(library(ggplot2))
-# Plot factorial n vs exponential n
-xx <- data.frame(a=factorial(1:10),b=exp(1:10),vals=1:10)
-d = melt(xx, id=c("vals"))
-d$variable = c(rep("Factorial Growth",10),rep("Exponential Growth",10))
-ggplot(d) + geom_line(aes(x=vals, y=value, colour=variable),lwd=2.5) +
-  scale_colour_manual(values=c("skyblue1","lightcoral")) + xlim(5,9) + ylim(0,362880) + ggtitle("Factorial vs Exponential Growth") + theme_solarized_2()
+INSERT PLOT
 ```
 
 
@@ -132,8 +126,7 @@ The above code simple creates k permutations of our data
 For our test statistic, we observe the following distribution:
 
 ```{r echo=FALSE}
-ourTestStats <- simPermDsn(ourData$SURVIVAL, ourData$TREATMENT, diffMeans )
-qplot(ourTestStats, fill='lightcoral') + theme_solarized_2() + theme(legend.position="none")+ ggtitle("Test Statistic Distribution") 
+INSERT PLOT 
 ```
 
 
@@ -180,7 +173,7 @@ So, our p-value is 0.03.
 We can visualize this by observing our original test statistic's location in a sampled test statistic's distribution (symbolized by the vertical blue lines below). Recall that we calculated this earlier, obtaining a value of ~ 13:
 
 ```{r echo=FALSE}
-qplot(ourTestStats, fill='lightcoral') + geom_vline(xintercept = currentStat, lwd=2.5,col='skyblue1') + geom_vline(xintercept = -currentStat, lwd=2.5, col='skyblue1') + theme_solarized_2() + theme(legend.position="none") + ggtitle("Test Statistic Distribution") 
+INSERT PLOT
 ```
 
 This test statistic looks pretty deep in the tails of our distribution. In fact, with a significance level of 0.05, our p-value is significant. Thus we reject our null hypothesis and conclude that there is a difference provided by the treatment.
@@ -245,13 +238,5 @@ Thanks for reading and I hope you learned something!
 *Note,  this post was inspired by an assignment from Stat 158: Experimental Design, a course I took at UC Berkeley under Elizabeth Purdom and Christine Ho.*
  
 
-
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
 
 [email@domain.com](mailto:email@domain.com)
