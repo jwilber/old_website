@@ -14,15 +14,15 @@ paginate: 5
 navigation:
  - title: Home
    url: /index.html
- - title: About
+ - title: About Me
    url: /about
  - title: Contact
    url: /contact
 
 social:
    github: jwilber
-   twitter: brianmaierjr
-   facebook: brianmaierjr
+   twitter: 
+   facebook: 
    email: j.wilber92@gmail.com
 
 google_analytics: ""
