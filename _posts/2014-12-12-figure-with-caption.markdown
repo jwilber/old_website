@@ -144,28 +144,7 @@ To make any apparent trends obvious, I fit a regression line to each of the plot
 
 Counting from left-to-right, top-to-bottom, we can see that the first three plots yield little information about general trends in the data. However the fourth plot, Average Sentence Length per Year, clearly reveals a downward slope. 
 
-
-```
-p1 <- ggplot(speechesDF, aes(x=yr, y=sentences))
-p1 <- p1 + geom_line(color='skyblue1',lwd=1.1) + ggtitle("Number of Sentences per Year") + geom_smooth(method='lm',formula=y~x, colour="lightcoral") 
-
-p2 <- ggplot(speechesDF, aes(x=yr, y=words))
-p2 <- p2 + geom_line(color='skyblue1',lwd=1.1) + ggtitle("Number of Words per Year") + geom_smooth(method='lm',formula=y~x,colour='lightcoral')
-
-p3 <- ggplot(speechesDF, aes(x=yr, y=chars/words))
-p3 <- p3 + geom_line(color='skyblue1',lwd=1.1) + ggtitle("Average Word Length per Year") + geom_smooth(method='lm',formula=y~x, colour='lightcoral')
-
-p4 <- ggplot(speechesDF, aes(x=yr, y=words/sentences))
-p4 <- p4 + geom_line(color='skyblue1',lwd=1.1) + ggtitle("Average Sentence Length per Year") + geom_smooth(method='lm',formula=y~x,colour='lightcoral') 
-
-grid.arrange(p1,p2,p3,p4, ncol=2)
-
-text.mod <- lm(yr ~ sentences + chars + chars/words + words/sentences, data=speechesDF)
-
-summary(text.mod)
-
-
-```
+<img src="/images/avgsent.png" />
 
 Note the stark difference in the slope of plot four; the decreasing line indicates that average sentence lengths decrease over time. Is this downward slope just a coincidence, or is this trend legitimately occuring? We can determine that this occurence is statistically significant: we'll split our data up into the four groups, calculate the average sentence length/year for each president in said group, and test if the mean length for each group is statistically significant using ANOVA. 
 
