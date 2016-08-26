@@ -61,14 +61,16 @@ Our dendrogram reveals, then, that Andrew Jackson and Martin Van Buren are our m
 
 To investigate this, we'll use two techniques in tandem: T-SNE and K-Means Clustering.
 
-T-SNE is a relatively new dimensionality reduction technique developed by Laurens van der Maaten. In this context, t-SNE should reveal any clusters in our data.
+T-SNE is a relatively new dimensionality reduction technique developed by Laurens van der Maaten. In this context, t-SNE should reveal any clusters in our data. Below is a plot of our t-sne embedding.
+
+<img src="/images/uncolored_tsne.png" />
 
 
-Our t-SNE output has revealed some clusters in our data.
+Our t-SNE output appears to have some clusters in the data. In fact, the clusters are even more profound than they were for our dendrogram.
 
 On top of our t-SNE plot, we'll use a basic clustering algorithm called k-means.K means is a clustering algorithm that iteratively assigns elements to clusters based on a given distance metric such that each cluster is as similar as possible (i.e. the variance within each cluster is as small as possible).  which we can use to substantiate our earlier findings.
 
-Below I show two plots. The plot on the left shows a t-SNE 2-D embedding of our data. The plot on the right shows our assignments based on the most optimal (i.e. lowest within cluster variation) iteration of k-means.
+<img src="/images/colored_tsne.png" />
 
 
 
