@@ -31,7 +31,7 @@ In analyzing the State of the Union speeches, we can take two primary strategies
 
 In the individual case we can zoom in on each president and analyze them piecewise. For example, we can juxtapose the most-common words used by Barack Obama with the most-common words used by Geroge W. Bush:
 
-<img src="/images/perm.png" />
+<img src="/images/sotus_hclust.png" />
 
 
 COMMENT ON FINDINGS
