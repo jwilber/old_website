@@ -5,6 +5,12 @@ date:   2014-12-15
 theme: cosmo
 ---
 
+- to do list
+  - clean up grammer, diction, etc.
+  - create proper name for each (4) cluster
+  - Clean up plots
+  - 
+
 <p class="intro"><span class="dropcap">T</span>his post his post uses R and several text mining techniques to analyze the presidential State of the Union Address Speeches</p>
 
 
@@ -29,9 +35,9 @@ In analyzing the State of the Union speeches, we can take two primary strategies
   -analyze the speeches individually on a president-by-president basis
   -analyze the speeches as an aggregate and search for general trends.
 
-In the individual case we can zoom in on each president and analyze them piecewise. For example, we can juxtapose the most-common words used by Barack Obama with the most-common words used by Geroge W. Bush:
+In the individual case we can zoom in on each president and analyze them piecewise. For example, we can create a word cloud for each president. Below I'll juxtapose the most-common words used by Barack Obama with the most-common words used by Geroge W. Bush:
 
-<img src="/images/sotus_hclust.png" />
+<img src="/images/bushobama_clouds.png" />
 
 
 COMMENT ON FINDINGS
@@ -51,11 +57,7 @@ To perform the following analysis, a distance metric must be defined. For the fo
 An obvious point of interest is to view which presidents share the most in common with each other. We'll use a clustering algorithm called "Hierarchical Clustering" to create a dendrogram for easy visualization of this relationship.
 In agglomerative hierarchical clustering each observation is initialized as its own cluster, and pairs of clusters are merged going up the hierarchy until all observations fall into one class. Note that the earlier in the dendrogram that observations are clustered, the more similar they are to each other.
 
-pic
-
-
-DISCUSS DENDROGRAM FINDINGS
-TRANSITION INTO UTILIZING A DIFFERENT, MORE REVEALING PLOT
+<img src="/images/sotus_hclust.png" />
 
 Our dendrogram reveals, then, that Andrew Jackson and Martin Van Buren are our most similar presidents according to SOTUS content. [WHAT DO THEY HAVE IN COMMON?], while John F. Kennedy appears to be the most separate from any president.  [SPECULATE AS TO WHY]. Many more observations can be made, but perhaps the most SALIENT is that the presidents appear to be clustered in a chronological manner. For example, on the far left we can see George W. Bush alongside Bill Clinton and Obama. Notice that within this cluster, Obama and Clinton are clustered closer; perhaps a clustering exists at a party level as well as a chronological one?
 
@@ -90,29 +92,18 @@ Cluster 4:
 Presidents:
 
 
-I should also briefly mention that these clusters reappeared using other dimensionality reduction techniques For example, clustering on Multi-Dimensional Scaling (MDS), a technique used to preserve distance, is shown below, yielding the same outcome:
+I should also briefly mention that these clusters reappeared using other dimensionality reduction techniques as well. For example, clustering on Multi-Dimensional Scaling (MDS), a technique used to preserve distance, is shown below. Although the clusters appear differently than they did in our previous t-SNE embedding, the class assignments are exactly the same.
 
 <img src="/images/mds.png" />
 
-So why is our data split into 4 clusters?
+So clearly our data is divided into four main blocks. But why?
 
-Each SOTUS addresses the relevant national issues at the time of the address. Thus, it makes sense that the speeches are clustered together chronologically. However, what's interesting is observing the breaks that determined such disparate diction among the speeches.
-
-Running k-means resulted in four clusters. The dates of the corresponding clusters are as follows:
-
-So our data is clustered based on blocks of time, but why?
 Recall that the primary aim of the SOTUS is to discuss the present state of the nation. Thus it makes sense to observe that presidents closer together in time have more similar speeches, because they're discussing similar (or related) events! Intuitively, we'd expect words like "iraq" and " terror" to be common in speeches post-2001, while absent from speeches during the 1800s. This also explains why we don't observe a large disparity among political parties; the focal point of the speeches are the nation's issues, it's the solutions to those issues that (usually) differ by party.
 
 Below we'll view the relevant issues unique for each time frame. That is, we'll view the distribution of those words unique to each time frame, as these should reveal the salient issues of each time frame.
 
 - discuss early hist/cloud
-```{r}
-setdif_hist(erly)
-
-
-makeWordCloud(erly)
-
-```
+<img src="/images/early_hist.png" />
 
 - archaic vocabulary (prussia, barbarian, hayti)
 - suffrage
@@ -120,12 +111,7 @@ makeWordCloud(erly)
 
 
 
-```{r}
-setdif_hist(postviet,12)
-
-
-makeWordCloud(postviet)
-```
+<img src="/images/postviet_hist.png" />
 - war and pessismism seems t odominate
 - war/middle east: al-quada, bosnia, hussein, iraq, saddam, taliban, terror
 - tech growth: high-tech, entrepreneur, internet, math (though math is probably related with teen, )
@@ -136,24 +122,12 @@ makeWordCloud(postviet)
 
 
 - discuss ww2-vietname hist/cloud
-```{r}
-
-setdif_hist(ww2Viet,8)
-
-makeWordCloud(ww2Viet)
-
-```
+<img src="/images/preww2_hist.png" />
 WW2 dominates: nazi, kremlin, tank
 - bilateral, 
 - polaris
 
-```{r}
-setdif_hist(preww2)
-
-makeWordCloud(preww2)
-
-# Isthmus at Tehuantepec and Panama
-```
+<img src="/images/ww2viet_hist.png" />
 - battleship, porto-rico, filipino, isthmus, 
 - monroe
 - hague
