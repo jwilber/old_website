@@ -66,19 +66,16 @@ T-SNE is a relatively new dimensionality reduction technique developed by Lauren
 <img src="/images/uncolored_tsne.png" />
 
 
-Our t-SNE output appears to have some clusters in the data. In fact, the clusters are even more profound than they were for our dendrogram.
+Our t-SNE output appears to have some clusters in the data. In fact, the clusters are even more profound than they were for our dendrogram. If Our earlier presuppositions appear to be correct; the speeches are clearly divided into distinct blocks, based on chronological events. 
 
-On top of our t-SNE plot, we'll use a basic clustering algorithm called k-means.K means is a clustering algorithm that iteratively assigns elements to clusters based on a given distance metric such that each cluster is as similar as possible (i.e. the variance within each cluster is as small as possible).  which we can use to substantiate our earlier findings.
+On top of our t-SNE plot, we'll use a basic clustering algorithm called k-means.K means is a clustering algorithm that iteratively assigns elements to clusters based on a given distance metric such that each cluster is as similar as possible (i.e. the variance within each cluster is as small as possible).  We'll use k-means to identify and explicitly highlight our clusters. 
 
 <img src="/images/colored_tsne.png" />
 
+In this specific case, k-means performed most optimally with four clusters.
 
 
-Our earlier presuppositions appear to be correct; the speeches are clearly divided into distinct blocks, based on chronological events. In our case, k-means performed best with 4 clusters 
-(cross-validate different levels of k and show minimized error?)
-
-Why is this, and what are the events? While the plot won't answer this explicitly for us, we can infer pretty well what these clusters represent based on each cluster's contained presidents.
-Based on our results, I've determined the following class outcomes:
+Based on the cluster assignments, I've determined the following class assignments:
 
 Cluster 1:
 Presidents:
@@ -92,17 +89,10 @@ Presidents:
 Cluster 4:
 Presidents:
 
-I should also briefly mention that these clusters reappeared using other dimensionality reduction techniques For example, clustering on  MDS is shown below, yielding the same outcome:
-```{r}
-mds$TimeFrame <- 0
-mds$TimeFrame[1:22] <- "early"
-mds$TimeFrame[23:28] <- "Pre-WW2"
-mds$TimeFrame[29:36] <- "WW2-Vietnam"
-mds$TimeFrame[37:41] <- "Post Vietnam"
-mds$TimeFrame <- as.factor(mds$TimeFrame)
 
-ggplot(data.frame(mds), aes(x=col1,y=col2,label=rownames(mds))) + geom_point() + geom_text(size=3, nudge_y = .003, check_overlap = F,aes(color=TimeFrame)) + ggtitle("Multidimensional Scaling of State of the Union Addresses") 
-```
+I should also briefly mention that these clusters reappeared using other dimensionality reduction techniques For example, clustering on Multi-Dimensional Scaling (MDS), a technique used to preserve distance, is shown below, yielding the same outcome:
+
+<img src="/images/mds.png" />
 
 So why is our data split into 4 clusters?
 
