@@ -35,61 +35,56 @@ In analyzing the State of the Union speeches, we can take two primary strategies
   -analyze the speeches individually on a president-by-president basis
   -analyze the speeches as an aggregate and search for general trends.
 
-In the individual case we can zoom in on each president and analyze them piecewise. For example, we can create a word cloud for each president. Below I'll juxtapose the most-common words used by Barack Obama with the most-common words used by Geroge W. Bush:
+In the individual case we can zoom in on each president and analyze them piecewise. For example, we can create a word cloud for each president. Creating a separate word cloud for each president is information overload. Instead, below I  juxtapose the most-common words used by Barack Obama with the most-common words used by Geroge W. Bush:
 
 <img src="/images/bushobama_clouds.png" />
 
 
-COMMENT ON FINDINGS
+As we'd expect, multiple words are shared between the two presidents. Many of these co-occurrences are words we'd expect to see in any SOTUS speech, irrespective of the president. What makes the analysis interesting is the different words. For example, words like "terror", "freedom", and  "iraqi" occur very often in Bush's speeches, revealing the pillars of policy during his time in office (particularly his focus on terrorism and the middle east). On the other hand, Obama's words, such as "job", "economy", and "company" speak to the issues of his time in office, which were largely dominated by the recession.
 
+***
 
+Whiles individual analyses are undoubtedly interesting, zooming in on each  president is consuming both with regards to time and space. Thus, rather than assessing each speech individually, we'll analyze the speeches as an aggregate.
 
-Whiles individual analyses are undoubtedly interesting, zooming in on each  president is large both in time and space. 
-Thus, for this analysis, I chose to analyze the aggregate and view speeches together.
+In order to discuss the relationship between the speeches, a distance metric must be selected. For example, perhaps the simplest distance metric for comparing speeches is the "hamming distance", which is simply the number of positions at which corresponding symbols are different. For example, the hamming distance between "cat" and "can" is 1 (to get from "cat" to "can", we must change one symbol). 
+In this analysis, I utilize a much more complicated measure of distance, Jensen-Shannon divergence. Without going into too much detail, the JS metric measures the similarity between two probability distributions. In our case, we'll use it to measure how much one speech (or body of text) differs from another. 
 
-In order to discuss the relationship between the speeches, a distance metric must be selected. For example, perhaps the simplest distance metric for comparing speeches is the "hamming distance", which EXPLAIN HAMMING DISTANCE
-In this analysis, I utilize a much more complicated measure of distance, the INSERT DISTANCE METRIC AND EXPLAIN.
-This distance metric _ and allows us to __
-DISCUSS TEXT DISTANCE METHOD
-To perform the following analysis, a distance metric must be defined. For the following post, I se the
-
-
-An obvious point of interest is to view which presidents share the most in common with each other. We'll use a clustering algorithm called "Hierarchical Clustering" to create a dendrogram for easy visualization of this relationship.
-In agglomerative hierarchical clustering each observation is initialized as its own cluster, and pairs of clusters are merged going up the hierarchy until all observations fall into one class. Note that the earlier in the dendrogram that observations are clustered, the more similar they are to each other.
+After having selected a distance metric, we can begin with our analysis.
+An obvious point of interest is to view which presidents share the most in common with each other. That is, which presidents, as measured by the similarity of their speeches, speak congruently. To answer this question we'll use a clustering algorithm called Hierarchical Clustering, which will create a dendrogram for easy visualization of this relationship.
+In agglomerative hierarchical clustering, each observation is initialized as its own cluster, and pairs of clusters are merged going up the hierarchy until all observations fall into one class. Note that in our case, the y-axis measures the similarity of the speecehs, so the earlier in the dendrogram that observations are clustered, the more similar they are to each other. 
 
 <img src="/images/sotus_hclust.png" />
 
-Our dendrogram reveals, then, that Andrew Jackson and Martin Van Buren are our most similar presidents according to SOTUS content. [WHAT DO THEY HAVE IN COMMON?], while John F. Kennedy appears to be the most separate from any president.  [SPECULATE AS TO WHY]. Many more observations can be made, but perhaps the most SALIENT is that the presidents appear to be clustered in a chronological manner. For example, on the far left we can see George W. Bush alongside Bill Clinton and Obama. Notice that within this cluster, Obama and Clinton are clustered closer; perhaps a clustering exists at a party level as well as a chronological one?
+Our dendrogram reveals, then, that Andrew Jackson and Martin Van Buren are our most similar presidents according to SOTUS content. Martin Van Buren was Jackson's Secretary of State from 1829 to 1831 and vice-president from 1833 to 1837, as well as president from 1837 to 1841, so the result is hardly surprising. 
 
-To investigate this, we'll use two techniques in tandem: T-SNE and K-Means Clustering.
+On the other hand, John F. Kennedy appears to be the most separate from any president. Kennedy certainly left an eneduring legacy, though I'm not completely sure why he is such an outlier.  Many more observations can be made, but perhaps the most salient is that the presidents appear to be clustered in a chronological manner. For example, on the far left we can see George W. Bush alongside Bill Clinton and Barrack Obama. This pattern permeates throughout the whole of the dendrogram: T. Roosevelt is alongside Taft and Jefferson alongside Madison. Notice that within these cluster, party level clustering may exist as well. For example, Obama and Clinton are clustered closer to each other than they are to Bush Jr.; Is this clustering a coincidence, or are can the speeches actually be divided up this way?
 
-T-SNE is a relatively new dimensionality reduction technique developed by Laurens van der Maaten. In this context, t-SNE should reveal any clusters in our data. Below is a plot of our t-sne embedding.
+To investigate, we'll use two techniques in tandem: T-SNE and K-Means Clustering.
+
+T-SNE is a relatively new dimensionality reduction technique developed by Laurens van der Maaten. More information can be found [here](https://lvdmaaten.github.io/tsne/). In this context, t-SNE should reveal any clusters in our data. Below is a plot of our t-sne embedding.
 
 <img src="/images/uncolored_tsne.png" />
 
 
-Our t-SNE output appears to have some clusters in the data. In fact, the clusters are even more profound than they were for our dendrogram. If Our earlier presuppositions appear to be correct; the speeches are clearly divided into distinct blocks, based on chronological events. 
+Immediately we notice that our t-SNE output appears to have some clusters in the data. In fact, the clusters are even more profound than they were for our dendrogram. But what do these clusters correspond to? If our earlier presuppositions appear to be correct; the speeches are divided into blocks based on chronological events. Judging from the names in the clusters, this appears to be the case. However, we'll investigate to find out for sure.
 
-On top of our t-SNE plot, we'll use a basic clustering algorithm called k-means.K means is a clustering algorithm that iteratively assigns elements to clusters based on a given distance metric such that each cluster is as similar as possible (i.e. the variance within each cluster is as small as possible).  We'll use k-means to identify and explicitly highlight our clusters. 
+On top of our t-SNE plot, we'll use a basic clustering algorithm called k-means.K means is a clustering algorithm that iteratively assigns elements to clusters (based on some given distance metric) such that each cluster is as similar as possible (i.e. the variance within each cluster is as small as possible).  We'll use k-means to identify and explicitly highlight our clusters. 
 
 <img src="/images/colored_tsne.png" />
 
-In this specific case, k-means performed most optimally with four clusters.
+In this specific case, k-means performed most optimally with four clusters. I've determined the following class assignments based on the names within those clustesr:
 
+* Cluster 1:
+ Presidents:
 
-Based on the cluster assignments, I've determined the following class assignments:
+* Cluster 2:
+ Presidents:
 
-Cluster 1:
-Presidents:
+* Cluster 3:
+* Presidents:
 
-Cluster 2:
-Presidents:
-
-Cluster 3:
-Presidents:
-
-Cluster 4:
-Presidents:
+* Cluster 4:
+ Presidents:
 
 
 I should also briefly mention that these clusters reappeared using other dimensionality reduction techniques as well. For example, clustering on Multi-Dimensional Scaling (MDS), a technique used to preserve distance, is shown below. Although the clusters appear differently than they did in our previous t-SNE embedding, the class assignments are exactly the same.
