@@ -12,6 +12,15 @@ image: touring.jpg
 
 This is currently in Progress.
 
+In the meantime, I am having issues with markdown loading images stored locally (for homework assignments). Uploading the files to imgur failed, so I will use this post as a dump for images (while I need them).
+
+<img src="/Users/jared/Desktop/jwilber.github.io/images/plot1.jpg" />
+
+<img src="/Users/jared/Desktop/jwilber.github.io/images/plot2.jpg" />
+
+
+
+
 {% highlight R %}
 diffMeans <- function(data, hasTrt){
   # computes our test statistics: the difference of means
