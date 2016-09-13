@@ -8,7 +8,7 @@ theme: cosmo
 - to do list
 - 
 - create proper name for each (4) cluster
-- 
+- titles
   - clean up grammar, diction, etc.
   - Clean up plots
   - finish histogram descriptions
