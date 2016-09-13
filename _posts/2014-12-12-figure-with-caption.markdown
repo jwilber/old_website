@@ -6,10 +6,12 @@ theme: cosmo
 ---
 
 - to do list
-  - clean up grammer, diction, etc.
-  - create proper name for each (4) cluster
+- 
+- create proper name for each (4) cluster
+- 
+  - clean up grammar, diction, etc.
   - Clean up plots
-  - 
+  - finish histogram descriptions
 
 <p class="intro"><span class="dropcap">T</span>his post his post uses R and several text mining techniques to analyze the presidential State of the Union Address Speeches</p>
 
@@ -95,11 +97,12 @@ So clearly our data is divided into four main blocks. But why?
 
 Recall that the primary aim of the SOTUS is to discuss the present state of the nation. Thus it makes sense to observe that presidents closer together in time have more similar speeches, because they're discussing similar (or related) events! Intuitively, we'd expect words like "iraq" and " terror" to be common in speeches post-2001, while absent from speeches during the 1800s. This also explains why we don't observe a large disparity among political parties; the focal point of the speeches are the nation's issues, it's the solutions to those issues that (usually) differ by party.
 
-Below we'll view the relevant issues unique for each time frame. That is, we'll view the distribution of those words unique to each time frame, as these should reveal the salient issues of each time frame.
+Below we'll view the relevant issues unique for each time frame. Each of the following histograms displays only those words unique to it's timeframe, given a certain threshold of use. Ideally, these words should reveal the pertinent issues of each time frame.
 
 - discuss early hist/cloud
 <img src="/images/early_hist.png" />
 
+Although the above plot is titled, we needn't view the title to guess which plot it is. Archaic diction, such as "prussia", "barbarian", and "hayti" saturate the plot. Words also reveal evidence of the Civil War YEARS: "confederacy", "cherokee", and "barbarian" no doubt hint at the early days of US history, Civil War, Indians ("cherokee" and "barbarian") Other important issues can also be seen, such as suffrage (WOMANS SUFFRAGE ENTER YEARS).
 - archaic vocabulary (prussia, barbarian, hayti)
 - suffrage
 - confederacy, cherokee, barbarian
@@ -122,6 +125,8 @@ WW2 dominates: nazi, kremlin, tank
 - bilateral, 
 - polaris
 
+This time period is dominated by World War 2 rhetoric
+
 <img src="/images/ww2viet_hist.png" />
 - battleship, porto-rico, filipino, isthmus, 
 - monroe
@@ -131,9 +136,15 @@ WW2 dominates: nazi, kremlin, tank
 
 
 
-The above results aren't very surprising; after all, after discovering the blocks for our data, it's no surprise that they have separate vocabulary., the eras differ in the vocabulary utilized, as obvoiusly each speech is a function of the contemporary events.. 
-But do the groups differ in other manners as well?
-We'll pursue this end by investigating the implicit, "meta" features of the text as opposed to the explicit vocabulary used.
+
+The above results, although interesting, are not surprising. After all, after discovering the four blocks in our data, it's no surprise that they have separate vocabulary., the eras differ in the vocabulary utilized, as obvoiusly each speech is a function of the contemporary events.. 
+But do the groups differ in manners other than raw diction used?
+We'll pursue this end by investigating the implicit, "meta" features of the text as opposed to the explicit vocabulary used. We'll investigate the following features:
+
+*
+*
+*
+*
 
 To make any apparent trends obvious, I fit a regression line to each of the plots.
 
