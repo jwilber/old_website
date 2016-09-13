@@ -106,7 +106,7 @@ Below we'll view the relevant issues unique for each time frame. That is, we'll 
 
 
 
-<img src="/images/postviet_hist.png" />
+<img src="/images/postviet_hist.png" =500x500 />
 - war and pessismism seems t odominate
 - war/middle east: al-quada, bosnia, hussein, iraq, saddam, taliban, terror
 - tech growth: high-tech, entrepreneur, internet, math (though math is probably related with teen, )
