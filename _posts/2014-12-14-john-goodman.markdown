@@ -18,7 +18,7 @@ In the meantime, I am having issues with markdown loading images stored locally 
 
 <img src="/images/plot2.png" />
 
-
+<img src="/images/matlabhw2plot.png" />
 
 
 {% highlight R %}
