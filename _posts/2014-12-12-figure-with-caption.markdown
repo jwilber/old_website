@@ -89,32 +89,23 @@ In this specific case, k-means performed most optimally with four clusters. I've
  Presidents:
 
 
-I should also briefly mention that these clusters reappeared using other dimensionality reduction techniques as well. For example, clustering on Multi-Dimensional Scaling (MDS), a technique used to preserve distance, is shown below. Although the clusters appear differently than they did in our previous t-SNE embedding, the class assignments are exactly the same.
-
-<img src="/images/mds.png" />
-
 So clearly our data is divided into four main blocks. But why?
 
 Recall that the primary aim of the SOTUS is to discuss the present state of the nation. Thus it makes sense to observe that presidents closer together in time have more similar speeches, because they're discussing similar (or related) events! Intuitively, we'd expect words like "iraq" and " terror" to be common in speeches post-2001, while absent from speeches during the 1800s. This also explains why we don't observe a large disparity among political parties; the focal point of the speeches are the nation's issues, it's the solutions to those issues that (usually) differ by party.
 
-Below we'll view the relevant issues unique for each time frame. Each of the following histograms displays only those words unique to it's timeframe, given a certain threshold of use. Ideally, these words should reveal the pertinent issues of each time frame.
+Now, given that we could label the presidents by name and explicitly view the results, the clusters make sense. But what if we couldn't? What if we could only go off of the information contained within each cluster? Would our results lead to the same conclusion?
+
+Below I create four histograms, one for each timeframe. Each histogram contains the frequency of the most common words *unique* to each group. Ideally, these words will reveal the pertinent issues of each time frame.
 
 - discuss early hist/cloud
 <img src="/images/early_hist.png" />
 
-Although the above plot is titled, we needn't view the title to guess which plot it is. Archaic diction, such as "prussia", "barbarian", and "hayti" saturate the plot. Words also reveal evidence of the Civil War YEARS: "confederacy", "cherokee", and "barbarian" no doubt hint at the early days of US history, Civil War, Indians ("cherokee" and "barbarian") Other important issues can also be seen, such as suffrage (WOMANS SUFFRAGE ENTER YEARS).
-- archaic vocabulary (prussia, barbarian, hayti)
-- suffrage
-- confederacy, cherokee, barbarian
-
+Although the above plot is titled, we needn't view the title to guess which plot it is. Archaic diction, such as "prussia", "barbarian", and "hayti", saturate the plot. We can also see evidence of the Civil War and the Wild West: words like  _confederacy_, _cherokee_, and _barbarian_ no doubt hint at the early days of US history. Finally, other important issues can also be seen, such as _suffrage_.
 
 
 <img src="/images/postviet_hist.png" =500x500 />
-- war and pessismism seems t odominate
-- war/middle east: al-quada, bosnia, hussein, iraq, saddam, taliban, terror
-- tech growth: high-tech, entrepreneur, internet, math (though math is probably related with teen, )
-- job emphasis: americorps, teach,
-- brady-bill
+Vocabulary pertaining to war and The Middle East dominate this plot, with the most salient words being _al-quada_, _hussein_, _iraq_, _saddam_, _taliban_, and the most popular of all: _terror_. The five former words can relate to either the Gulf War or post-9/11 U.S. policy. Given the high frequency of _terror_, it's likely that the majority of the rhetoric derives from post-9/11.
+Note, also, other important issues of the time. We can see evidence of the tech growth of the 2000's (_high-tech_, _entrepreneur_, _internet_, _math_), as well as an emphasis on jobs and education (_americorp_, _teach_, _math_). Evidence of the 90s aside from the aforementiond Middle East vocabulary is also present:  _brady-bill_, refers to the  controversial law passed in 1993 regarding background checks for handgun purchases; _bosnia_, of course, refers to the Bosnian War (1992-1995) in Bosnia and Herzegovina. Thus, were we void of a cluster title, the vocabulary would make starkingly clearly that this chunk deals with modern rhetoric.  
 
 
 
@@ -132,29 +123,32 @@ This time period is dominated by World War 2 rhetoric
 - monroe
 - hague
 - exposition, cable
+While the diction of the other clusters clearly identified the cluster, the WW2-Vietnam cluster was much more vague. Still, evidence exists to aid our classification. Given words such as _porto-rico_ and _filipino_, we can easily conclude that rhetoric deals with the Pacific. Words like _battleship_ hint at an increased navy presence. 
 
 
 
+The above results are indeed interesting, though they're not exactly surprising.
+The above results, although interesting, are not surprising. After all, after discovering the four blocks in our data, it's no surprise that rhetoric would relate to issues contemporary to the blocks.
 
+A more interesting question is assessing whether or not the groups differ in manner apart from diction.
+We'll pursue this end by investigating the implicit, "meta" features of the text as opposed to the explicit vocabulary we analuzed previously. We'll investigate the following four features across the time domain of our data:
 
-The above results, although interesting, are not surprising. After all, after discovering the four blocks in our data, it's no surprise that they have separate vocabulary., the eras differ in the vocabulary utilized, as obvoiusly each speech is a function of the contemporary events.. 
-But do the groups differ in manners other than raw diction used?
-We'll pursue this end by investigating the implicit, "meta" features of the text as opposed to the explicit vocabulary used. We'll investigate the following features:
+* Number of sentences used per year
+* Number of words used per year
+* Average word length per year
+* Average sentence length per year
 
-*
-*
-*
-*
+To make any apparent trends obvious, a regression line is fit to each of the four plots.
 
-To make any apparent trends obvious, I fit a regression line to each of the plots.
-
-Counting from left-to-right, top-to-bottom, we can see that the first three plots yield little information about general trends in the data. However the fourth plot, Average Sentence Length per Year, clearly reveals a downward slope. 
+The results are as follows:
 
 <img src="/images/avgsent.png" />
 
-Note the stark difference in the slope of plot four; the decreasing line indicates that average sentence lengths decrease over time. Is this downward slope just a coincidence, or is this trend legitimately occuring? We can determine that this occurence is statistically significant: we'll split our data up into the four groups, calculate the average sentence length/year for each president in said group, and test if the mean length for each group is statistically significant using ANOVA. 
+Counting from left-to-right, top-to-bottom, we can see that the first three plots yield little information about general trends in the data, with the lines being more-or-less stagnant. However, the fourth plot, Average Sentence Length per Year, clearly reveals a downward slope. 
 
-Our results indicate that it is indeed the case that sentences are getting less complicated over time. So why is this the case? Perhaps this is an effect of our decreasing attention spans. With the increasing importance of technology over the years, informatin has been compressed and, as a result, many attention spans have been lowered. Or perhaps networks put pressure on sentence length; after all, although a SOTUS could technically go on for hours, networks airing the speech may put pressure so that they can keep to their schedule after certain time. Whatever the reason, the phenomena is indeed occuring.
+This decreasing line indicates that average sentence lengths decrease over time. Is this downward slope just a coincidence, or is this trend legitimately occuring? Analyzing the average sentence length per year for each of the four groups via ANOVA determines that this result is statistically significant. 
+
+So sentences are getting shorted over time; why is this the case? Perhaps this is an effect of our decreasing attention spans. With the increasing importance of technology over the years, information has been compressed and, as a result, many attention spans have been lowered. Or perhaps networks put pressure on sentence length; after all, although a SOTUS could technically go on for hours, networks airing the speech may put pressure so that they can keep to their schedule after certain time. Whatever the reason, the phenomena is indeed occuring.
 
 However, the above hypotheses are weak as they don't adequately explain why tsuch trends exist for our earliest groups.doesn't explain why this trend exists for our earliest groups. Thus, it's hard to say
 
