@@ -100,15 +100,17 @@ Below I create four histograms, one for each timeframe. Each histogram contains 
 Although the above plot is titled, we needn't view the title to guess which plot it is. Archaic diction, such as "prussia", "barbarian", and "hayti", saturate the plot. We can also see evidence of the Civil War and the Wild West: words like  _confederacy_, _cherokee_, and _barbarian_ no doubt hint at the early days of US history. Finally, other important issues can also be seen, such as _suffrage_.
 
 
-<img src="/images/postviet_hist.png" =500x500 />
+<img src="/images/postviet_hist.png"  />
+
 Vocabulary pertaining to war and The Middle East dominate this plot, with the most salient words being _al-quada_, _hussein_, _iraq_, _saddam_, _taliban_, and the most popular of all: _terror_. The five former words can relate to either the Gulf War or post-9/11 U.S. policy. Given the high frequency of _terror_, it's likely that the majority of the rhetoric derives from post-9/11.
+
 Note, also, other important issues of the time. We can see evidence of the tech growth of the 2000's (_high-tech_, _entrepreneur_, _internet_, _math_), as well as an emphasis on jobs and education (_americorp_, _teach_, _math_). Evidence of the 90s aside from the aforementiond Middle East vocabulary is also present:  _brady-bill_, refers to the  controversial law passed in 1993 regarding background checks for handgun purchases; _bosnia_, of course, refers to the Bosnian War (1992-1995) in Bosnia and Herzegovina. Thus, were we void of a cluster title, the vocabulary would make starkingly clearly that this chunk deals with modern rhetoric.  
 
 
 
 
 <img src="/images/preww2_hist.png" />
-
+Clearly, the above plot deals with the WW2 era.
 
 <img src="/images/ww2viet_hist.png" />
 - battleship, porto-rico, filipino, isthmus, 
