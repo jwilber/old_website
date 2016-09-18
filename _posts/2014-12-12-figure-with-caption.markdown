@@ -44,8 +44,6 @@ As we'd expect, multiple words are shared between the two presidents. Many of th
 
 Whiles individual analyses are undoubtedly interesting, zooming in on each  president is consuming both with regards to time and space. Thus, rather than assessing each speech individually, we'll analyze the speeches as an aggregate.
 
-***
-
 
 ### _Analyzing The Speeches In Aggregate_
 
@@ -105,12 +103,12 @@ Now, given that we could label the presidents by name and explicitly view the re
 
 Below I create four histograms, one for each timeframe. Each histogram contains the frequency of the most common words *unique* to each group. Ideally, these words will reveal the pertinent issues of each time frame.
 
-
+##### Cluster 1
 <img src="/images/early_hist.png" />
 
 Although the above plot is titled, we needn't view the title to guess which plot it is. Archaic diction, such as "prussia", "barbarian", and "hayti", saturate the plot. We can also see evidence of the Civil War and the Wild West: words like  _confederacy_, _cherokee_, and _barbarian_ no doubt hint at the early days of US history. Finally, other important issues can also be seen, such as _suffrage_.
 
-
+##### Cluster 2
 <img src="/images/postviet_hist.png"  />
 
 Vocabulary pertaining to war and The Middle East dominate this plot, with the most salient words being _al-quada_, _hussein_, _iraq_, _saddam_, _taliban_, and the most popular of all: _terror_. The five former words can relate to either the Gulf War or post-9/11 U.S. policy. Given the high frequency of _terror_, it's likely that the majority of the rhetoric derives from post-9/11.
@@ -119,9 +117,11 @@ Note, also, other important issues of the time. We can see evidence of the tech 
 
 
 
-
+##### Cluster 3
 <img src="/images/preww2_hist.png" />
 Clearly, the above plot deals with the WW2 era.
+
+##### Cluster 4
 
 <img src="/images/ww2viet_hist.png" />
 - battleship, porto-rico, filipino, isthmus, 
@@ -132,7 +132,7 @@ While the diction of the other clusters clearly identified the cluster, the WW2-
 
 
 
-The above results are indeed interesting, though they're not exactly surprising.
+#### Futher Analysis
 The above results, although interesting, are not surprising. After all, after discovering the four blocks in our data, it's no surprise that rhetoric would relate to issues contemporary to the blocks.
 
 A more interesting question is assessing whether or not the groups differ in manner apart from diction.
@@ -157,6 +157,7 @@ So sentences are getting shorted over time; why is this the case? Perhaps this d
 
 However, the above hypotheses are weak as they don't adequately explain why tsuch trends exist for our earliest groups.doesn't explain why this trend exists for our earliest groups. Thus, it's hard to say
 
+### Conclusion
 Unfortunately, I am by no means a historian, so my comments as to why we observed what we did are pretty unsubstantiated. Still, I think it's very interesting what we can learn with some simple application of statistical methods.
 
 Thus, our simple data analysis has yielded several interesting facts:
