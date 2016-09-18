@@ -28,14 +28,11 @@ Using the data as-is obviously won't work. However, extensive use of data cleani
 
 
 
-EXPLAIN TFIDF MATRIX STUFF
-
-- above, possible discuss data more (num lines, etc.)
-
 
 In analyzing the State of the Union speeches, we can take two primary strategies: 
-  -analyze the speeches individually on a president-by-president basis
-  -analyze the speeches as an aggregate and search for general trends.
+
+* analyze the speeches individually on a president-by-president basis
+* analyze the speeches as an aggregate and search for general trends.
 
 In the individual case we can zoom in on each president and analyze them piecewise. For example, we can create a word cloud for each president. Creating a separate word cloud for each president is information overload. Instead, below I  juxtapose the most-common words used by Barack Obama with the most-common words used by Geroge W. Bush:
 
@@ -97,7 +94,7 @@ Now, given that we could label the presidents by name and explicitly view the re
 
 Below I create four histograms, one for each timeframe. Each histogram contains the frequency of the most common words *unique* to each group. Ideally, these words will reveal the pertinent issues of each time frame.
 
-- discuss early hist/cloud
+
 <img src="/images/early_hist.png" />
 
 Although the above plot is titled, we needn't view the title to guess which plot it is. Archaic diction, such as "prussia", "barbarian", and "hayti", saturate the plot. We can also see evidence of the Civil War and the Wild West: words like  _confederacy_, _cherokee_, and _barbarian_ no doubt hint at the early days of US history. Finally, other important issues can also be seen, such as _suffrage_.
@@ -110,20 +107,15 @@ Note, also, other important issues of the time. We can see evidence of the tech 
 
 
 
-- discuss ww2-vietname hist/cloud
 <img src="/images/preww2_hist.png" />
-WW2 dominates: nazi, kremlin, tank
-- bilateral, 
-- polaris
 
-This time period is dominated by World War 2 rhetoric
 
 <img src="/images/ww2viet_hist.png" />
 - battleship, porto-rico, filipino, isthmus, 
 - monroe
 - hague
 - exposition, cable
-While the diction of the other clusters clearly identified the cluster, the WW2-Vietnam cluster was much more vague. Still, evidence exists to aid our classification. Given words such as _porto-rico_ and _filipino_, we can easily conclude that rhetoric deals with the Pacific. Words like _battleship_ hint at an increased navy presence. 
+While the diction of the other clusters clearly identified the cluster, the WW2-Vietnam cluster is much more vague. Still, evidence exists to aid our classification. Given words such as _porto-rico_ and _filipino_, we can easily conclude that rhetoric deals with the Pacific. Words like _battleship_ hint at an increased navy presence. 
 
 
 
@@ -148,7 +140,7 @@ Counting from left-to-right, top-to-bottom, we can see that the first three plot
 
 This decreasing line indicates that average sentence lengths decrease over time. Is this downward slope just a coincidence, or is this trend legitimately occuring? Analyzing the average sentence length per year for each of the four groups via ANOVA determines that this result is statistically significant. 
 
-So sentences are getting shorted over time; why is this the case? Perhaps this is an effect of our decreasing attention spans. With the increasing importance of technology over the years, information has been compressed and, as a result, many attention spans have been lowered. Or perhaps networks put pressure on sentence length; after all, although a SOTUS could technically go on for hours, networks airing the speech may put pressure so that they can keep to their schedule after certain time. Whatever the reason, the phenomena is indeed occuring.
+So sentences are getting shorted over time; why is this the case? Perhaps this displays a trend of decreasing attention spans. With the influx of information availability over the years (printer press to smart phone), information has become more and more compressed. Perhaps the plot reflects this trend; sentences have become more concise and to the point. Or maybe shorter attention spans are to blame Or perhaps this reflects a networks put pressure on sentence length; after all, although a SOTUS could technically go on for hours, networks airing the speech may put pressure so that they can keep to their schedule after certain time. Whatever the reason, the phenomena is indeed occuring.
 
 However, the above hypotheses are weak as they don't adequately explain why tsuch trends exist for our earliest groups.doesn't explain why this trend exists for our earliest groups. Thus, it's hard to say
 
