@@ -32,7 +32,7 @@ In the individual case we can zoom in on each president and analyze them individ
 <img src="/images/bushobama_clouds.png" />
 
 
-As we'd expect, multiple words are shared between the two presidents. Many of these co-occurrences are words we'd expect to see in any SOTUS speech, irrespective of the president. What makes the analysis interesting is the different words. For example, words like "terror", "freedom", and  "iraqi" occur very often in Bush's speeches, revealing the pillars of policy during his time in office (particularly his focus on terrorism and the middle east). On the other hand, Obama's words, such as "job", "economy", and "company" speak to the issues of his time in office, which were largely dominated by the recession.
+As we'd expect, multiple words are shared between the two presidents. Many of these co-occurrences are words we'd expect to see in any SOTUS speech, irrespective of the president. What makes the analysis interesting is the different words. For example, words like _terror_, _freedom_, and  _iraqi_ occur very often in Bush's speeches, revealing the pillars of policy during his time in office (particularly his focus on terrorism and the middle east). On the other hand, Obama's words, such as _job_, _economy_, and _company_ speak to the issues of his time in office, which were largely dominated by the recession.
 
 Whiles individual analyses are undoubtedly interesting, zooming in on each  president is consuming both with regards to time and space. Thus, rather than assessing each speech individually, we'll analyze the speeches as an aggregate.
 
@@ -53,7 +53,7 @@ In agglomerative hierarchical clustering, each observation is initialized as its
 
 Our dendrogram reveals, then, that Andrew Jackson and Martin Van Buren are our most similar presidents according to SOTUS content. Martin Van Buren was Jackson's Secretary of State from 1829 to 1831 and vice-president from 1833 to 1837, as well as president from 1837 to 1841, so the result is hardly surprising. 
 
-On the other hand, John F. Kennedy appears to be the most separate from any president. While Kennedy certainly left an eneduring legacy, it is unclear why he is such an outlier (history buffs feel free to chime in). Many more observations can be made, but perhaps the most salient is that the presidents appear to be clustered in a chronological manner. For example, on the far left we can see George W. Bush alongside Bill Clinton and Barrack Obama. This pattern permeates throughout the whole of the dendrogram: T. Roosevelt is alongside Taft and Jefferson alongside Madison. Notice that within these cluster, party level clustering may exist as well. For example, Obama and Clinton are clustered closer to each other than they are to Bush Jr.; Is this clustering a coincidence, or are can the speeches actually be divided up this way?
+On the other hand, John F. Kennedy appears to be the most separate from any president. While Kennedy certainly left an eneduring legacy, it is unclear why he is such an outlier (history buffs feel free to chime in). Many more observations can be made, but perhaps the most salient is that the presidents appear to be clustered in a chronological manner. For example, on the far left we can see George W. Bush alongside Bill Clinton and Barrack Obama. This pattern permeates throughout the whole of the dendrogram: Theodore Roosevelt is alongside William Howard Taft and Thomas Jefferson alongside James Madison. Notice that within these cluster, party level clustering may exist as well. For example, Obama and Clinton are clustered closer to each other than they are to Bush Jr.; Is this clustering a coincidence, or are can the speeches actually be divided up this way?
 
 #### More Clustering
 
@@ -72,16 +72,16 @@ On top of our t-SNE plot, we'll use a basic clustering algorithm called k-means.
 
 In this specific case, k-means performed most optimally with four clusters. I've determined the following class assignments (admittedly the names can use improvement) based on the names within those clusters.
 
-* Cluster 1: Early
+* Cluster 1: **Early**
   * Years of Presidency: 1789 - 1901
 
-* Cluster 2: Pre-WW2
+* Cluster 2: **Pre-WW2**
   * Years of Presidency:1901 - 1933
 
-* Cluster 3: WW2-Viet
+* Cluster 3: **WW2-Viet**
   * Years of Presidency: 1933 - 1981
 
-* Cluster 4: Post-Viet
+* Cluster 4: **Post-Viet**
   * Years of Presidency: 1981 - 2014
 
 
@@ -142,11 +142,14 @@ Counting from left-to-right, top-to-bottom, we can see that the first three plot
 This decreasing line indicates that average sentence lengths decrease over time. Is this downward slope just a coincidence, or is this trend legitimately occuring? Analyzing the average yearly sentence length for each of the four groups (via ANOVA) determines that this result is statistically significant. 
 
 So sentences are getting shorted over time. Why is this the case? I can think of three possible reasons for this occuring:
+
 1. Information Compression: With the influx of information availability over the years (printer press to smart phone), information has become more and more compressed. Perhaps the plot reflects this trend, with sentences having become more concise and to the point. 
+
 2. A linear decrease in attention spans.
+
 3. Network pressure: A State of the Union Address can technically go on for hours. Radios/networks airing the speech may be placing pressure on the duration of the speech.
 
-Whatever the reason, the phenomena is indeed occuring. That said, the above three explanations are applicable only to an extent. They are weak in that they don't adequately explain why such trends exist for our earliest groups
+While the phenomena is indeed occuring, the above three explanations are applicable only to an extent; they are weak in that they don't adequately explain why such trends exist for our earliest clusters. 
 
 ### Conclusion
 
