@@ -131,8 +131,6 @@ We'll pursue this end by investigating the implicit, "meta" features of the text
 
 To make any apparent trends obvious, a regression line is fit to each of the four plots.
 
-=======
-
 To make any apparent trends obvious, a regression line is fit to each of the four plots.
 
 The results are as follows:
@@ -141,11 +139,14 @@ The results are as follows:
 
 Counting from left-to-right, top-to-bottom, we can see that the first three plots yield little information about general trends in the data, with the lines being more-or-less stagnant. However, the fourth plot, Average Sentence Length per Year, clearly reveals a downward slope. 
 
-This decreasing line indicates that average sentence lengths decrease over time. Is this downward slope just a coincidence, or is this trend legitimately occuring? Analyzing the average sentence length per year for each of the four groups via ANOVA determines that this result is statistically significant. 
+This decreasing line indicates that average sentence lengths decrease over time. Is this downward slope just a coincidence, or is this trend legitimately occuring? Analyzing the average yearly sentence length for each of the four groups (via ANOVA) determines that this result is statistically significant. 
 
-So sentences are getting shorted over time; why is this the case? Perhaps this displays a trend of decreasing attention spans. With the influx of information availability over the years (printer press to smart phone), information has become more and more compressed. Perhaps the plot reflects this trend; sentences have become more concise and to the point. Or maybe shorter attention spans are to blame Or perhaps this reflects a networks put pressure on sentence length; after all, although a SOTUS could technically go on for hours, networks airing the speech may put pressure so that they can keep to their schedule after certain time. Whatever the reason, the phenomena is indeed occuring.
+So sentences are getting shorted over time. Why is this the case? I can think of three possible reasons for this occuring:
+1. Information Compression: With the influx of information availability over the years (printer press to smart phone), information has become more and more compressed. Perhaps the plot reflects this trend, with sentences having become more concise and to the point. 
+2. A linear decrease in attention spans.
+3. Network pressure: A State of the Union Address can technically go on for hours. Radios/networks airing the speech may be placing pressure on the duration of the speech.
 
-However, the above hypotheses are weak as they don't adequately explain why tsuch trends exist for our earliest groups.doesn't explain why this trend exists for our earliest groups. Thus, it's hard to say
+Whatever the reason, the phenomena is indeed occuring. That said, the above three explanations are applicable only to an extent. They are weak in that they don't adequately explain why such trends exist for our earliest groups
 
 ### Conclusion
 
