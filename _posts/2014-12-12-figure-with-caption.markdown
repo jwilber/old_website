@@ -76,7 +76,7 @@ Immediately we notice that our t-SNE output appears to have some clusters in the
 
 On top of our t-SNE plot, we'll use a basic clustering algorithm called k-means.K means is a clustering algorithm that iteratively assigns elements to clusters (based on some given distance metric) such that each cluster is as similar as possible (i.e. the variance within each cluster is as small as possible).  We'll use k-means to identify and explicitly highlight our clusters. 
 
-<img src="/images/colored_tsne.png" />
+<img src="/images/tsne.png" />
 
 In this specific case, k-means performed most optimally with four clusters. I've determined the following class assignments based on the names within those clustesr:
 
