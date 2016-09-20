@@ -78,26 +78,22 @@ On top of our t-SNE plot, we'll use a basic clustering algorithm called k-means.
 
 <img src="/images/tsne.png" />
 
-In this specific case, k-means performed most optimally with four clusters. I've determined the following class assignments based on the names within those clustesr:
+In this specific case, k-means performed most optimally with four clusters. I've determined the following class assignments (admittedly the names can use improvement) based on the names within those clusters.
 
-* Cluster 1: Washington - McKinley
+* Cluster 1: Early
 * Years of Presidency: 1789 - 1901
 
-* Cluster 2:T.Roosevelt - Hoover
+* Cluster 2: Pre-WW2
 * Years of Presidency:1901 - 1933
 
-* Cluster 3: FDR - Jimmy Carter
+* Cluster 3: WW2-Viet
 * Years of Presidency: 1933 - 1981
 
-* Cluster 4: Reagan - Obama
+* Cluster 4: Post-Viet
 * Years of Presidency: 1981 - 2014
 
 <<<<<<< HEAD
 =======
-Post Vietnam: Reagan - Bush
-WW2-Vietnam: FDR - Carter
-Pre-WW2: T.Roosevelt - Hoover
-early: Washington - McKinley
 
 
 >>>>>>> origin/master
