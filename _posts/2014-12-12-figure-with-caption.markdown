@@ -5,14 +5,6 @@ date:   2014-12-15
 theme: cosmo
 ---
 
-- to do list
-- 
-- create proper name for each (4) cluster
-- titles
-  - clean up grammar, diction, etc.
-  - Clean up plots
-  - finish histogram descriptions
-
 <p class="intro"><span class="dropcap">T</span>his post his post uses R and several text mining techniques to analyze the presidential State of the Union Address Speeches</p>
 
 
@@ -34,7 +26,7 @@ In analyzing the State of the Union speeches, we can take two primary strategies
 * analyze the speeches individually on a president-by-president basis
 * analyze the speeches as an aggregate and search for general trends.
 
-### _Individual Assessment_
+### Individual Assessment
 In the individual case we can zoom in on each president and analyze them individually. For example, we can create a word cloud for each president. That said, creating a separate word cloud for all 43 presidents would be pretty difficult to analyze. Instead, as a brief example, below I juxtapose the most-common words used by Barack Obama with the most-common words used by Geroge W. Bush:
 
 <img src="/images/bushobama_clouds.png" />
@@ -45,7 +37,7 @@ As we'd expect, multiple words are shared between the two presidents. Many of th
 Whiles individual analyses are undoubtedly interesting, zooming in on each  president is consuming both with regards to time and space. Thus, rather than assessing each speech individually, we'll analyze the speeches as an aggregate.
 
 
-### _Analyzing The Speeches In Aggregate_
+### Analyzing The Speeches In Aggregate
 
 ##### Distance Between Speeches
 In order to discuss the relationship between the speeches, a distance metric must be selected. For example, a very simple distance metric for comparing speeches is the _hamming distance_. The _hamming distance_ simply measures the number of positions at which corresponding symbols are different between words. For example, the hamming distance between "_cat_" and "_can_" is 1 (to get from "_cat_" to "_can_", we must change one symbol). 
@@ -92,11 +84,7 @@ In this specific case, k-means performed most optimally with four clusters. I've
 * Cluster 4: Post-Viet
 * Years of Presidency: 1981 - 2014
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> origin/master
 So clearly our data is divided into four main blocks. But why?
 
 #### Analyzing Our Clusters
@@ -107,33 +95,26 @@ Now, given that we could label the presidents by name and explicitly view the re
 
 Below I create four histograms, one for each timeframe. Each histogram contains the frequency of the most common words *unique* to each group. Ideally, these words will reveal the pertinent issues of each time frame.
 
-##### Cluster 1
+##### Cluster 1 (Early)
 <img src="/images/early_hist.png" />
 
 Although the above plot is titled, we needn't view the title to guess which plot it is. Archaic diction, such as "prussia", "barbarian", and "hayti", saturate the plot. We can also see evidence of the Civil War and the Wild West: words like  _confederacy_, _cherokee_, and _barbarian_ no doubt hint at the early days of US history. Finally, other important issues can also be seen, such as _suffrage_.
 
-##### Cluster 2
-<img src="/images/postviet_hist.png"  />
 
-Vocabulary pertaining to war and The Middle East dominate this plot, with the most salient words being _al-quada_, _hussein_, _iraq_, _saddam_, _taliban_, and the most popular of all: _terror_. The five former words can relate to either the Gulf War or post-9/11 U.S. policy. Given the high frequency of _terror_, it's likely that the majority of the rhetoric derives from post-9/11.
-
-Note, also, other important issues of the time. We can see evidence of the tech growth of the 2000's (_high-tech_, _entrepreneur_, _internet_, _math_), as well as an emphasis on jobs and education (_americorp_, _teach_, _math_). Evidence of the 90s aside from the aforementiond Middle East vocabulary is also present:  _brady-bill_, refers to the  controversial law passed in 1993 regarding background checks for handgun purchases; _bosnia_, of course, refers to the Bosnian War (1992-1995) in Bosnia and Herzegovina. Thus, were we void of a cluster title, the vocabulary would make starkingly clearly that this chunk deals with modern rhetoric.  
-
-
-
-##### Cluster 3
-<img src="/images/preww2_hist.png" />
-Clearly, the above plot deals with the WW2 era.
-
-##### Cluster 4
+##### Cluster 2 (Pre-WW2)
 
 <img src="/images/ww2viet_hist.png" />
-- battleship, porto-rico, filipino, isthmus, 
-- monroe
-- hague
-- exposition, cable
-While the diction of the other clusters clearly identified the cluster, the WW2-Vietnam cluster is much more vague. Still, evidence exists to aid our classification. Given words such as _porto-rico_ and _filipino_, we can easily conclude that rhetoric deals with the Pacific. Words like _battleship_ hint at an increased navy presence. 
+ Given words such as _porto-rico_ and _filipino_, we can easily conclude that rhetoric deals with the Pacific. Words like _battleship_ hint at an increased navy presence. This is clearly in relation to the Phillipine-American War, which ended at the beginning of this time cluster (this period starts in 1901, the war ended in 1902). _Hague_ also reveals the time period, as the First Peace Conference at The Hague was signed in 1899, and entered into force in 1900.
 
+##### Cluster 3 (WW2-Viet)
+<img src="/images/preww2_hist.png" />
+Clearly, the above plot deals with the WW2 era, eith words like _nazi_, _tank_, and _kremlin_ jumping out immediately. In fact, he most frequently used word, _reconversion_, refers to the restoration efforts of Western Europe immediately post-World War 2. The second most popular word, _lendlea_, refers to the Lend Lease Act (1941), in which Congress authorized giving arms to to any country the President deemed vital to the defense of the United States. Moving towards Vietnam, we can see the growing importance of the Eastern Pacific with words such as _bilateral_ and _indochina_.
+
+
+##### Cluster 4 (Post Viet)
+<img src="/images/postviet_hist.png"  />
+
+Vocabulary pertaining to war and The Middle East dominate this plot, with the most salient words being _al-quada_, _hussein_, _iraq_, _saddam_, _taliban_, and the most popular of all: _terror_. The five former words can relate to either the Gulf War or post-9/11 U.S. policy. Given the high frequency of _terror_, it's likely that the majority of the rhetoric derives from post-9/11. Note, also, other important issues of the time. We can see evidence of the tech growth of the 2000's (_high-tech_, _entrepreneur_, _internet_, _math_), as well as an emphasis on jobs and education (_americorp_, _teach_, _math_). Evidence of the 90s aside from the aforementiond Middle East vocabulary is also present:  _brady-bill_, refers to the  controversial law passed in 1993 regarding background checks for handgun purchases; _bosnia_, of course, refers to the Bosnian War (1992-1995) in Bosnia and Herzegovina. Thus, were we void of a cluster title, the vocabulary would make starkingly clearly that this chunk deals with modern rhetoric.  
 
 
 #### Futher Analysis
@@ -168,13 +149,16 @@ So sentences are getting shorted over time; why is this the case? Perhaps this d
 However, the above hypotheses are weak as they don't adequately explain why tsuch trends exist for our earliest groups.doesn't explain why this trend exists for our earliest groups. Thus, it's hard to say
 
 ### Conclusion
-Unfortunately, I am by no means a historian, so my comments as to why we observed what we did are pretty unsubstantiated. Still, I think it's very interesting what we can learn with some simple application of statistical methods.
 
-Thus, our simple data analysis has yielded several interesting facts:
-- SOTUS are blocked into 4 primary timeframes
-- political party does not effect time frame
+Let's recap what our simple analysis has yieldeds:
 
-- popular terms for each era
-- JFK is a bit of an outlier, at least in regards to his SOTUS rhetoric
-- sentence complexity has decreased over time
+- State of the Union Speeches are clustered chronologically, primarily into four groups.
+- Poilitical party
+- We learned the popular terms that help decide each era.
+- With regard to his SOTUS rhetoric/diction, John F. Kennedy is an outlier.
+- Sentences have, on average, gotten shorter over time.
+
+Unfortunately, I am not a historian, so any commentary I can offer on our observations is quite limited. That said, I think it's very interesting the plethora of information simple statistical methods can obtain. My hope is that this post inspired you and opened your eyes to the power of statistical methods and ubiquity of of their applications.
+
+
 
