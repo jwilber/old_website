@@ -73,16 +73,16 @@ On top of our t-SNE plot, we'll use a basic clustering algorithm called k-means.
 In this specific case, k-means performed most optimally with four clusters. I've determined the following class assignments (admittedly the names can use improvement) based on the names within those clusters.
 
 * Cluster 1: Early
-* Years of Presidency: 1789 - 1901
+  * Years of Presidency: 1789 - 1901
 
 * Cluster 2: Pre-WW2
-* Years of Presidency:1901 - 1933
+  * Years of Presidency:1901 - 1933
 
 * Cluster 3: WW2-Viet
-* Years of Presidency: 1933 - 1981
+  * Years of Presidency: 1933 - 1981
 
 * Cluster 4: Post-Viet
-* Years of Presidency: 1981 - 2014
+  * Years of Presidency: 1981 - 2014
 
 
 So clearly our data is divided into four main blocks. But why?
@@ -135,7 +135,6 @@ To make any apparent trends obvious, a regression line is fit to each of the fou
 
 To make any apparent trends obvious, a regression line is fit to each of the four plots.
 
->>>>>>> origin/master
 The results are as follows:
 
 <img src="/images/avgsent.png" />
