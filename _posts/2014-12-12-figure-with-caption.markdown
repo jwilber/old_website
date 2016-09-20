@@ -80,19 +80,27 @@ On top of our t-SNE plot, we'll use a basic clustering algorithm called k-means.
 
 In this specific case, k-means performed most optimally with four clusters. I've determined the following class assignments based on the names within those clustesr:
 
-* Cluster 1:
- Presidents:
+* Cluster 1: Washington - McKinley
+* Years of Presidency: 1789 - 1901
 
-* Cluster 2:
- Presidents:
+* Cluster 2:T.Roosevelt - Hoover
+* Years of Presidency:1901 - 1933
 
-* Cluster 3:
-* Presidents:
+* Cluster 3: FDR - Jimmy Carter
+* Years of Presidency: 1933 - 1981
 
-* Cluster 4:
- Presidents:
+* Cluster 4: Reagan - Obama
+* Years of Presidency: 1981 - 2014
+
+<<<<<<< HEAD
+=======
+Post Vietnam: Reagan - Bush
+WW2-Vietnam: FDR - Carter
+Pre-WW2: T.Roosevelt - Hoover
+early: Washington - McKinley
 
 
+>>>>>>> origin/master
 So clearly our data is divided into four main blocks. But why?
 
 #### Analyzing Our Clusters
@@ -142,9 +150,15 @@ We'll pursue this end by investigating the implicit, "meta" features of the text
 * Number of words used per year
 * Average word length per year
 * Average sentence length per year
+<<<<<<< HEAD
 
 To make any apparent trends obvious, a regression line is fit to each of the four plots.
 
+=======
+
+To make any apparent trends obvious, a regression line is fit to each of the four plots.
+
+>>>>>>> origin/master
 The results are as follows:
 
 <img src="/images/avgsent.png" />
