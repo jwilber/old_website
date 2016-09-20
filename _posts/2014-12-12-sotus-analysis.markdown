@@ -127,7 +127,7 @@ We'll pursue this end by investigating the implicit, "meta" features of the text
 * Number of words used per year
 * Average word length per year
 * Average sentence length per year
-<<<<<<< HEAD
+
 
 To make any apparent trends obvious, a regression line is fit to each of the four plots.
 
