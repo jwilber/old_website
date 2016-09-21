@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "State of the Union Address Text Analysis"
-date:   2014-12-15
+date:   2016-09-20
 theme: cosmo
 ---
 
