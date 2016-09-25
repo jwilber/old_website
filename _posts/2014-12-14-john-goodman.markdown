@@ -21,6 +21,23 @@ In the meantime, I am having issues with markdown loading images stored locally 
 <img src="/images/matlabhw2plot.png" />
 
 
+## Lab 3
+<img src="/images/crimes1.png" />
+<img src="/images/crimes2.png" />
+<img src="/images/crimes3.png" />
+<img src="/images/ppp1.png" />
+<img src="/images/ppp2.png" />
+<img src="/images/ppp3.png" />
+<img src="/images/ppp4.png" />
+<img src="/images/ppp5.png" />
+<img src="/images/cholera1.png" />
+<img src="/images/cholera2.png" />
+<img src="/images/cholera3.png" />
+<img src="/images/cholera4.png" />
+
+
+
+
 {% highlight R %}
 diffMeans <- function(data, hasTrt){
   # computes our test statistics: the difference of means
