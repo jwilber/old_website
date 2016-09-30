@@ -69,6 +69,7 @@ The above expression analyzes the input expression and returns its time in SECON
 The `microbenchmark()` function is easily the most useful timing function currently in R. If you're going to remember one method to time your code, this is the one. `microbenchmark()` facilitates comparing runtime between multiple functions. It takes in multiple functions as arguments and outputs summary runtime statistics. By default, it runs each functino 100 times and averages the results. You can change this option, as well as the unit of time to be measured via the `times` and `unit` arguments, respectively.
 
 To give an example, we'll compare several implementations of a function computing the standard deviation for some function of numbers
+
 ```R
 # microbenchmark example
 library(microbenchmark)
@@ -115,6 +116,7 @@ Timing functions is very important and an essential part of any efficient workfl
 
 ### Memory Pre-allocation
 One of the most important aspects of memory management in R is pre-allocating your memory. An important application of this is when dealing with vectors or any multi-dimensional objects. It's always much more efficient to initialize an object of the desired size than to grow it iteratively. 
+
 ```R
 # Memory Pre-Allocation Example
 cum_prod_grow <- function(x) {
@@ -188,6 +190,7 @@ Thus, caching values increases a function speeds more than two-fold, while memoi
 In R, compiling our code is a quick, easy way to have it run more efficiently. To achieve this, we'll use the `compiler` package, which compiles an expression into a byte code object What does this mean, and why is it effective? Byte code is simply machine code for a virtual machine. In general, lower level languages (e.g. C), compile their source code to machine code. Other languages, such as Python, compile their code to byte code.
 
 In standard R, expressions are parsed into a parse tree, which is then interpreted upon evaluation. With the `compiler` package, we can convert R's expressions into byte code, to be evalutaed via a stack-based virtual machine architecture. In the vast majority of cases this greatly improves runtime.
+
 ```R
 # compiler example
 library(compiler)
