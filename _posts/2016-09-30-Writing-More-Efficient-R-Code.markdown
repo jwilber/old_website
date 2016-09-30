@@ -25,21 +25,10 @@ Here is an outline of what I will cover:
   3. proc.time()
 
 * Memory
-  1. Cache Variables
-  2. Memoise
-  3. Preallocate Memory
-  4. Pryr
-  5. Data.Table
-
-* General Tipes
-  * Compile Code
-  * Parallelise
-  * Vectorize
-
-* Useful Tips
-  * Use list, not data.frame
-  * seq_len & seq_along
-  * C++
+  1. Memory Preallocation
+  2. Memoisation and Caching Variables
+  3. Compiling Code
+  4. Analysing Memory in Use
 
 Let's get started.
 
