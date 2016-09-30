@@ -55,8 +55,10 @@ In order to write more efficient code, we need some way by which to facilitate c
 * `proc.time()`: Analyze the speed of chunkcs of our code
 
 ### `system.time()`
+
 The `system.time()` function handles a single R expression as its argument. We use `system.time()` when we want to analyze expressions one at a time.
-```{r}
+
+```R
 # system.time() Example
 system.time(for(i in 1:1000) mean(sample(1:1000, 100)))
 ```
@@ -86,6 +88,7 @@ When comparing the output from microbenchmark, look to the median output. You ca
 If we want to measure the speed of arbitrary chunks of our code (including the whole script itself), we use the `proc.time()` function. 
 
 `proc.time()` works as follows:
+
 * Preface the chunk of code you wish to time with `time_start <- proc.time()`. This initializes the timer.
 * Add `proc.time() - time_start` to the line just after the end of the chunk of code you'd like to time.
 In this manner, we can think of `proc.time()` as a sort of stop watch; we initialize a timer at the beginning of the code, time the code's duration, then initialize another timer at the end of the code and take the difference between our new timer and our old timer. The total duration of code is output under the `elapsed` column.
