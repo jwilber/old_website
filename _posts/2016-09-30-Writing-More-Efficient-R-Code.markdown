@@ -85,7 +85,7 @@ microbenchmark( sd1, sd2, sd3, sd4, sd5, times=10000)
 RETURN OUTPUT IN MARKDOWN TABLE 
 When comparing the output from microbenchmark, look to the median output. You can also compare the lower quartile,`lq`, and the upper quartile, `uq`, to get a sense of the variance of the timings. From the above example, `sd3 <- var(x) ^ (1/2)` was our fastest implementation, but only slightly.
 
-### `proc.time()`
+#### `proc.time()`
 If we want to measure the speed of arbitrary chunks of our code (including the whole script itself), we use the `proc.time()` function. 
 
 `proc.time()` works as follows:
@@ -114,7 +114,7 @@ Timing functions is very important and an essential part of any efficient workfl
   
 ***
 
-### Memory Pre-allocation
+#### Memory Pre-allocation
 One of the most important aspects of memory management in R is pre-allocating your memory. An important application of this is when dealing with vectors or any multi-dimensional objects. It's always much more efficient to initialize an object of the desired size than to grow it iteratively. 
 
 ```R
@@ -143,7 +143,7 @@ Thus, initializing an object of the correct size is much more efficient. This di
 
 ***
 
-### Memoisation and Caching Variables
+#### Memoisation and Caching Variables
 
 Another important aspect in memory management is caching variables. Caching variables refers to storing the value of a variable for future use. This storage shaves off time incrementally, but can have a big effect when used in conjunction with apply statements or loops.
 
@@ -185,7 +185,7 @@ Thus, caching values increases a function speeds more than two-fold, while memoi
 
 ***
 
-### Compile Code
+#### Compile Code
 
 In R, compiling our code is a quick, easy way to have it run more efficiently. To achieve this, we'll use the `compiler` package, which compiles an expression into a byte code object What does this mean, and why is it effective? Byte code is simply machine code for a virtual machine. In general, lower level languages (e.g. C), compile their source code to machine code. Other languages, such as Python, compile their code to byte code.
 
@@ -199,13 +199,13 @@ library(compiler)
 
 ### Index data frames as lists
 
-### Use seq_len and seq_along()
+#### Use seq_len and seq_along()
 When uses sequences (espeically in loops), avoid using `1:length(x)`. This is because this can sometimes lead to strange erros. Instead, best practice dictates that you should 
 use `seq_along(x)` or `seq_len(length(x))`. The three are essentially identical in speed (test this for yourself).
 
 ***
 
-### Memory In Use
+#### Memory In Use
 
 To get pertinent information regarding memory used in session, you can use the `pryr` package. The `pryr` package contains multiple useful functions that yield memory usage information.
 
@@ -214,7 +214,7 @@ To get pertinent information regarding memory used in session, you can use the `
 * `object_size`: Returns an estimate of the size of the object (bytes)
 
 
-### Useful Memory Facts
+#### Useful Memory Facts
 
 * R counts the number of names that point to each object in our workspace, and deleted objects that no longer have names pointing to them. In this way, R automatically relases memory from objects that are no longer being used. This is known as _garbage colection_, and while in some languages it's required to call this on your own, R does it automatically.
 
