@@ -3,8 +3,9 @@ layout: post
 title:  "Test Post"
 date:   2014-12-10
 ---
+[in progress]
 
-<p class="intro"><span class="dropcap">t</span></p>he goal of this post is to (hopefully) introduce you to some methods that will aid you in writing more efficient R code. While I am by no means an R expert, I've picked up some techniques in my few years of using R that will hopefully prove beneficial to you!
+<p class="intro"><span class="dropcap">T</span></p>he goal of this post is to (hopefully) introduce you to some methods that will aid you in writing more efficient R code. While I am by no means an R expert, I've picked up some techniques in my few years of using R that will hopefully prove beneficial to you!
 
 
 ### Why?
@@ -66,7 +67,7 @@ The above expression analyzes the input expression and returns its time in SECON
 The `microbenchmark()` function is easily the most useful timing function currently in R. If you're going to remember one method to time your code, this is the one. `microbenchmark()` facilitates comparing runtime between multiple functions. It takes in multiple functions as arguments and outputs summary runtime statistics. By default, it runs each functino 100 times and averages the results. You can change this option, as well as the unit of time to be measured via the `times` and `unit` arguments, respectively.
 
 To give an example, we'll compare several implementations of a function computing the standard deviation for some function of numbers
-```{r}
+```R
 # microbenchmark example
 library(microbenchmark)
 set.seed(100)
@@ -89,7 +90,7 @@ If we want to measure the speed of arbitrary chunks of our code (including the w
 * Add `proc.time() - time_start` to the line just after the end of the chunk of code you'd like to time.
 In this manner, we can think of `proc.time()` as a sort of stop watch; we initialize a timer at the beginning of the code, time the code's duration, then initialize another timer at the end of the code and take the difference between our new timer and our old timer. The total duration of code is output under the `elapsed` column.
 
-```{r}
+```R
 # proc.time() example
 time_start <- proc.time()
 x <- runif(100)
@@ -111,7 +112,7 @@ Timing functions is very important and an essential part of any efficient workfl
 
 ### Memory Pre-allocation
 One of the most important aspects of memory management in R is pre-allocating your memory. An important application of this is when dealing with vectors or any multi-dimensional objects. It's always much more efficient to initialize an object of the desired size than to grow it iteratively. 
-```{r}
+```R
 # Memory Pre-Allocation Example
 cum_prod_grow <- function(x) {
   obj <- c(x[1])
@@ -145,7 +146,7 @@ Memoizaton is a popular concept in Computer Science that refers to the technique
 
 Below I compare three functions: one with no variable caching, one with caching, and one that is fully memoised.
 
-```{r}
+```R
 # Cache Variable Example
 no_cache <- function(x) {
   vec <- vector(length = length(x))
@@ -184,7 +185,7 @@ Thus, caching values increases a function speeds more than two-fold, while memoi
 In R, compiling our code is a quick, easy way to have it run more efficiently. To achieve this, we'll use the `compiler` package, which compiles an expression into a byte code object What does this mean, and why is it effective? Byte code is simply machine code for a virtual machine. In general, lower level languages (e.g. C), compile their source code to machine code. Other languages, such as Python, compile their code to byte code.
 
 In standard R, expressions are parsed into a parse tree, which is then interpreted upon evaluation. With the `compiler` package, we can convert R's expressions into byte code, to be evalutaed via a stack-based virtual machine architecture. In the vast majority of cases this greatly improves runtime.
-```{r}
+```R
 # compiler example
 library(compiler)
 ```
