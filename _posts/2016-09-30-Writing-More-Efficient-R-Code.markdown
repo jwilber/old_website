@@ -4,18 +4,17 @@ title:  "Test Post"
 date:   2014-12-10
 ---
 
-<p class="intro"><span class="dropcap">L</span>orem ipsum thor smash liege-bastogne-liege landbouwkrediet ombregt krabbe, rouleur derby is for lovers bonk giro gilbert bidon. Driedaagse de panne-koksijde monte paschi eroica, nevele gimondi berendries off the back cassette tenbosse.</p>
+<p class="intro"><span class="dropcap">t</span></p>he goal of this post is to (hopefully) introduce you to some methods that will aid you in writing more efficient R code. While I am by no means an R expert, I've picked up some techniques in my few years of using R that will hopefully prove beneficial to you!
 
+
+### Why?
 R is a programming language primarily used for data science and statistical analysis. 
-While R is complimented by many when it comes to data analysis, it's definitely not praised for its efficiency (i.e., it's speed or memory management). That's not to say that R isn't very efficient; for the vast majority of cases, it will get the job done and do it well. However, it is true that R is not as efficient as it can be. This stems from two primary reasons
+While R is complimented by many when it comes to data analysis, it's definitely not praised for its efficiency (specifically, it's speed or memory management). That's not to say that R isn't very efficient; for the vast majority of cases, it will get the job done and do it well. However, it is true that R is not as efficient as it can be. This stems from two primary reasons
 
 1. R is very, very dynamic. Although this dynamism gives us more flexibility, when coupled with lexical scoping it results in slower code.
 2. The current most popular implementation of R (gnu-R, this is what you have if you don't know which implementatin of R you have) is far from peak-optimization with regards to the current implementation.
 
-
 That said, the point of this post isn't discussing R's current implementation, it's to help you write better R code. If you would like to learn more about R, I suggest reading either [BOOK OR BOOK LINK]
-
-As stated, the goal of this post is to (hopefully) introduce you to some methods that will aid you in writing more efficient R code. While I am by no means an R expert, I've picked up some techniques in my few years of using R that will hopefully prove beneficial to you!
 
 Here is an outline of what I will cover:
 
@@ -41,11 +40,11 @@ Here is an outline of what I will cover:
   * seq_len & seq_along
   * C++
 
-* Conclusion
+Let's get started.
 
-By efficient I mean two things:
-* Faster w.r.t. speed
-* More memory Efficient
+***
+
+
 
 # Timing Your Code
 In order to write more efficient code, we need some way by which to facilitate comparison. An obvious choice in measuring speed is timing our code. Below I list three methods we'll use, as well as when to use them.
@@ -107,16 +106,8 @@ A quick note - the above three functions are all related in the following ways:
 * `microbenchmark` takes and compares the average number of `system.time()` calls. In our case, that's equivalent to calling `system.time(for (i in 1:100) sd(x)) / 100)`.
 
 Timing functions is very important and an essential part of any efficient workflow, and the above functions should be sufficient for any time measurement needs that you'll encounter. 
-
-# Best Practices
-
-The following sections discusses best practices for memory management in R. We will discuss the following topics
-
-  1. Cache Variables ∫
-  2. Memoise ∫
-  3. Preallocate ∫
-  4. Pryr
-  5. Data.Table
+  
+***
 
 ### Memory Pre-allocation
 One of the most important aspects of memory management in R is pre-allocating your memory. An important application of this is when dealing with vectors or any multi-dimensional objects. It's always much more efficient to initialize an object of the desired size than to grow it iteratively. 
@@ -143,6 +134,8 @@ microbenchmark(cum_prod_init(c(1:10000)), cum_prod_grow(c(1:10000)), times=100)
 ```
 TABLE OUTPUT
 Thus, initializing an object of the correct size is much more efficient. This disparity only grows as the number of dimensions of our object increases.
+
+***
 
 ### Memoisation and Caching Variables
 
@@ -184,6 +177,8 @@ microbenchmark(no_cache(c(1:1000)), si_cache(c(1:1000)), mem_cache(c(1:1000)))
 
 Thus, caching values increases a function speeds more than two-fold, while memoising increases the speed almost four-fold.
 
+***
+
 ### Compile Code
 
 In R, compiling our code is a quick, easy way to have it run more efficiently. To achieve this, we'll use the `compiler` package, which compiles an expression into a byte code object What does this mean, and why is it effective? Byte code is simply machine code for a virtual machine. In general, lower level languages (e.g. C), compile their source code to machine code. Other languages, such as Python, compile their code to byte code.
@@ -201,6 +196,7 @@ library(compiler)
 When uses sequences (espeically in loops), avoid using `1:length(x)`. This is because this can sometimes lead to strange erros. Instead, best practice dictates that you should 
 use `seq_along(x)` or `seq_len(length(x))`. The three are essentially identical in speed (test this for yourself).
 
+***
 
 ### Memory In Use
 
@@ -216,3 +212,9 @@ To get pertinent information regarding memory used in session, you can use the `
 * R counts the number of names that point to each object in our workspace, and deleted objects that no longer have names pointing to them. In this way, R automatically relases memory from objects that are no longer being used. This is known as _garbage colection_, and while in some languages it's required to call this on your own, R does it automatically.
 
 * Every argument in a function slows down the function call by about 20 nanoseconds. Why is this the case? Every argument creates a promise object that creates an expression required to carry out the result as well as the environment in which to carray out the expression. For this reason, it's good practice to limit the number of function arguments when applicable.
+
+***
+
+### Conclusion
+
+While the above list certainly wasn't exhaustive, I hope that you learned something new. Each of the above topics can be used to your benefit when incorporated into your R workflow. Thanks for reading, and if you have an questions or comments please let me know!
