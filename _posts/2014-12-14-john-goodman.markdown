@@ -22,7 +22,7 @@ In the meantime, I am having issues with markdown loading images stored locally 
 <img src="/images/q1p2.png" />
 <img src="/images/q2p1.png" />
 <img src="/images/q2p2.png" />
-<img src="/images/q3p1.png" />
+<img src="/images/q3.png" />
 <img src="/images/q4p1.png" />
 <img src="/images/q4p2.png" />
 
