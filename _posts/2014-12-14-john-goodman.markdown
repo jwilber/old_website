@@ -14,6 +14,24 @@ This is currently in Progress.
 
 In the meantime, I am having issues with markdown loading images stored locally (for homework assignments). Uploading the files to imgur failed, so I will use this post as a dump for images (while I need them).
 
+
+
+
+
+<img src="/images/q1p1.png" />
+<img src="/images/q1p2.png" />
+<img src="/images/q2p1.png" />
+<img src="/images/q2p2.png" />
+<img src="/images/q3p1" />
+<img src="/images/q4p1" />
+<img src="/images/q4p2.png" />
+<img src="/images/q.png" />
+
+
+
+
+
+
 <img src="/images/plot1.png" />
 
 <img src="/images/plot2.png" />
