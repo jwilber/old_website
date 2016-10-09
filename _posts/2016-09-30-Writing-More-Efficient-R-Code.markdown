@@ -170,6 +170,21 @@ mem_cache <- memoise(no_cache)
 microbenchmark(no_cache(c(1:1000)), si_cache(c(1:1000)), mem_cache(c(1:1000)))
 ```
 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ Quantity & Value \\ 
+  \hline
+Residual standard error: & 3.259  \\ 
+  Multiple R-squared: &  0.6119 \\
+  Adjusted R-squared: & 0.6099  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
 Thus, caching values increases a function speeds more than two-fold, while memoising increases the speed almost four-fold.
 
 ***
