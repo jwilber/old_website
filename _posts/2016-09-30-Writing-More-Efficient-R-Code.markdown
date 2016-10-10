@@ -85,13 +85,13 @@ microbenchmark( sd1, sd2, sd3, sd4, sd5, times=10000)
 ```
 
 
-| expr | min | lq | mean     | median | uq  | max    | neval |
-|------|-----|----|----------|--------|-----|--------|-------|
-| sd1  | 33  | 45 | 164.1960 | 64     | 147 | 80242  | 10000 |
-| sd2  | 34  | 48 | 150.6942 | 73     | 147 | 72417  | 10000 |
-| sd3  | 34  | 46 | 128.9370 | 71     | 147 | 75355  | 10000 |
-| sd4  | 39  | 51 | 163.7486 | 73     | 147 | 117244 | 10000 |
-| sd5  | 39  | 49 | 141.9029 | 72     | 147 | 65110  | 10000 |
+| expr | min | lq | mean    | median | uq  | max  | neval |
+|------|-----|----|---------|--------|-----|------|-------|
+| sd1  | 33  | 45 | 52.8414 | 45     | 48 | 11362 | 10000 |
+| sd2  | 34  | 48 | 71.0916 | 47     | 50 | 63875 | 10000 |
+| sd3  | 34  | 46 | 55.5363 | 45     | 48 | 10846 | 10000 |
+| sd4  | 39  | 51 | 61.8710 | 48     | 51 | 14515 | 10000 |
+| sd5  | 39  | 49 | 54.1965 | 46     | 48 | 11086 | 10000 |
 
 When comparing the output from microbenchmark, look to the median output. You can also compare the lower quartile,`lq`, and the upper quartile, `uq`, to get a sense of the variance of the timings. From the above example, `sd3 <- var(x) ^ (1/2)` was our fastest implementation, but only slightly.
 
