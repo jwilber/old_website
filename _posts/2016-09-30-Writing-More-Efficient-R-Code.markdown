@@ -52,7 +52,11 @@ The `system.time()` function handles a single R expression as its argument. We u
 system.time(for(i in 1:1000) mean(sample(1:1000, 100)))
 ```
 
-The above expression analyzes the input expression and returns its time in SECONDS???
+| user  | systerm | elapsed |
+|-------|---------|---------|
+| 0.020 | 0.016   | 0.059   |
+
+The above expression analyzes the input expression and returns its time in seconds.
 
 #### `microbenchmark()`
 The `microbenchmark()` function is easily the most useful timing function currently in R. If you're going to remember one method to time your code, this is the one. `microbenchmark()` facilitates comparing runtime between multiple functions. It takes in multiple functions as arguments and outputs summary runtime statistics. By default, it runs each functino 100 times and averages the results. You can change this option, as well as the unit of time to be measured via the `times` and `unit` arguments, respectively.
