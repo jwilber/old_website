@@ -102,7 +102,7 @@ r <- sum(x,y,z)
 proc.time() - time_start
 ```
 
-| user  | systerm | elapsed |
+| user  | system | elapsed |
 |-------|---------|---------|
 | 0.004 | 0.014   | 0.045   |
 
