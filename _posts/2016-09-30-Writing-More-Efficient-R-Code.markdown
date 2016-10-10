@@ -20,9 +20,9 @@ That said, the point of this post isn't discussing R's current implementation, i
 Here is an outline of what I will cover:
 
 * Time your code
-  1. system.time()
-  2. microbenchmark
-  3. proc.time()
+  1. `system.time()`
+  2. `microbenchmark()`
+  3. `proc.time()`
 
 * Memory
   1. Memory Preallocation
@@ -47,19 +47,21 @@ In order to write more efficient code, we need some way by which to facilitate c
 
 The `system.time()` function handles a single R expression as its argument. We use `system.time()` when we want to analyze expressions one at a time.
 
+For example, we can analyze the time it takes to loop through 1000 calculations of calling the mean function on a random sample of points:
+
 ```R
 # system.time() Example
 system.time(for(i in 1:1000) mean(sample(1:1000, 100)))
 ```
 
-| user  | systerm | elapsed |
+| user  | system | elapsed |
 |-------|---------|---------|
 | 0.020 | 0.016   | 0.059   |
 
-The above expression analyzes the input expression and returns its time in seconds.
+The above expression analyzes the input expression and returns its time in seconds. The important column to pay attention to is the _elapsed_ column, as this reveals the total elapsed time required to evaluate our provided expression.
 
 #### `microbenchmark()`
-The `microbenchmark()` function is easily the most useful timing function currently in R. If you're going to remember one method to time your code, this is the one. `microbenchmark()` facilitates comparing runtime between multiple functions. It takes in multiple functions as arguments and outputs summary runtime statistics. By default, it runs each functino 100 times and averages the results. You can change this option, as well as the unit of time to be measured via the `times` and `unit` arguments, respectively.
+The `microbenchmark()` function is easily the most useful timing function currently in R. If you're going to remember one method to time your code, this is the one. `microbenchmark()` facilitates comparing runtime between multiple function calls. It takes in multiple functions as arguments and outputs summary runtime statistics. By default, it runs each functino 100 times and averages the results. You can change this option, as well as the unit of time to be measured via the `times` and `unit` arguments, respectively.
 
 To give an example, we'll compare the runtimes for several different implementations of the standard deviation function for a group of numbers.
 
