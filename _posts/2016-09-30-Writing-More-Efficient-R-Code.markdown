@@ -133,7 +133,7 @@ One of the most important aspects of memory management in R is pre-allocating yo
 ```R
 # Memory Pre-Allocation Example
 cum_prod_grow <- function(x) {
-  obj <- c(x[1])
+  obj      <- c(x[1])
   for( i in 2:length(x)) {
     obj[i] <- x[i] + obj[i-1]
   }
@@ -141,8 +141,8 @@ cum_prod_grow <- function(x) {
 }
 
 cum_prod_init <- function(x) {
-  obj <- vector(mode="numeric", length=length(x))
-  obj[1] <- x[1]
+  obj      <- vector(mode="numeric", length=length(x))
+  obj[1]   <- x[1]
   for( i in 2:length(x)) {
     obj[i] <- x[i] + obj[i-1]
   }
@@ -172,31 +172,31 @@ Below I compare three functions: one with no variable caching, one with caching,
 
 ```R
 # Cache Variable Example
-no_cache <- function(x) {
-  vec <- vector(length = length(x))
+no_cache  <- function(x) {
+  vec      <- vector(length = length(x))
   for(i in seq_along(x)) {
     vec[i] <- sum(max(x), log(x), min(x), mean(x), i)
-    vec[i] = vec[i] / length(x)
+    vec[i] <- vec[i] / length(x)
   }
   vec
 }
 
 si_cache <- function(x) {
-  mx  <- max(x)
-  mn  <- min(x)
-  lx  <- log(x)
-  ux  <- mean(x)
-  n   <- length(x)
-  vec <- vector(length = n)
+  mx       <- max(x)
+  mn       <- min(x)
+  lx       <- log(x)
+  ux       <- mean(x)
+  n        <- length(x)
+  vec      <- vector(length = n)
   for(i in seq_along(x)) {
     vec[i] <- sum(mx, mn, lx, ux, 1)
-    vec[i] = vec[i] / n
+    vec[i] <- vec[i] / n
   }
   vec
 }
 
 library(memoise)
-mem_cache <- memoise(no_cache)
+mem_cache  <- memoise(no_cache)
 microbenchmark(no_cache(c(1:1000)), si_cache(c(1:1000)), mem_cache(c(1:1000)))
 ```
 
@@ -220,13 +220,6 @@ In standard R, expressions are parsed into a parse tree, which is then interpret
 # compiler example
 library(compiler)
 ```
-
-
-### Index data frames as lists
-
-#### Use seq_len and seq_along()
-When uses sequences (espeically in loops), avoid using `1:length(x)`. This is because this can sometimes lead to strange erros. Instead, best practice dictates that you should 
-use `seq_along(x)` or `seq_len(length(x))`. The three are essentially identical in speed (test this for yourself).
 
 ***
 
