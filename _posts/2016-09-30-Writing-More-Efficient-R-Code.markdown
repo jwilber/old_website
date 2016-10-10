@@ -61,7 +61,13 @@ The above expression analyzes the input expression and returns its time in secon
 #### `microbenchmark()`
 The `microbenchmark()` function is easily the most useful timing function currently in R. If you're going to remember one method to time your code, this is the one. `microbenchmark()` facilitates comparing runtime between multiple functions. It takes in multiple functions as arguments and outputs summary runtime statistics. By default, it runs each functino 100 times and averages the results. You can change this option, as well as the unit of time to be measured via the `times` and `unit` arguments, respectively.
 
-To give an example, we'll compare several implementations of a function computing the standard deviation for some function of numbers
+To give an example, we'll compare the runtimes for several different implementations of the standard deviation function for a group of numbers.
+
+Recall the formula for standard deviation is as follows:
+
+$$ s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2} $$
+
+
 
 ```R
 # microbenchmark example
