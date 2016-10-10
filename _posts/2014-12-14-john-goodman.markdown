@@ -21,6 +21,7 @@ In the meantime, I am having issues with markdown loading images stored locally 
 <img src="/images/lab5p4.png" />
 <img src="/images/lab5p5.png" />
 <img src="/images/lab5p6.png" />
+<img src="/images/lab5p62.png" />
 <img src="/images/lab5p7.png" />
 <img src="/images/lab5p8.png" />
 <img src="/images/lab5p9.png" />
