@@ -158,7 +158,7 @@ microbenchmark(cum_prod_init(c(1:10000)), cum_prod_grow(c(1:10000)), times=100)
 | `cum_prod_init(c(1:10000))` | 8.99947   | 9.19716   | 11.46031  | 9.581028   | 11.51252  | 26.54054  | 100   |
 | `cum_prod_grow(c(1:10000))` | 96.828066 | 110.18554 | 128.99623 | 114.860681 | 130.11597 | 221.84280 | 100   |
 
-Thus, initializing an object of the correct size is much more efficient. This disparity only grows as the number of dimensions of our object increases.
+Thus, initializing an object of the correct size is eleven times faster. This disparity only grows as the number of dimensions of our object increases.
 
 ***
 
@@ -166,9 +166,12 @@ Thus, initializing an object of the correct size is much more efficient. This di
 
 Another important aspect in memory management is caching variables. Caching variables refers to storing the value of a variable for future use. This storage shaves off time incrementally, but can have a big effect when used in conjunction with apply statements or loops.
 
-Memoizaton is a popular concept in Computer Science that refers to the technique of storing the results of function calls and returning the cached result when the same inputs occur again. This is very easy to implement in R thanks to the `memoise` package.
+Memoizaton is a popular optimization technique in caching and refers to the technique of storing the results of function calls and returning the cached result when the same inputs occur again. This is very easy to implement in R thanks to the `memoise` package.
 
-Below I compare three functions: one with no variable caching, one with caching, and one that is fully memoised.
+
+
+
+Below I compare three functions: one with no variable caching, one where we cache our variables, and one that is fully memoised.
 
 ```R
 # Cache Variable Example
@@ -206,7 +209,7 @@ microbenchmark(no_cache(c(1:1000)), si_cache(c(1:1000)), mem_cache(c(1:1000)))
 | si_cache(c(1:1000))  | 2631.881  | 2683.565  | 2785.6216  | 2738.47  | 2806.6720  | 3510.548   | 100   |
 | mem_cache(c(1:1000)) | 67.733    | 80.592    | 116.8227   | 130.80   | 138.5335   | 177.456    | 100   |
 
-Thus, caching values increases a function speeds more than two-fold, while memoising increases the speed almost four-fold.
+Thus, caching values increases function speeds greatly
 
 ***
 
