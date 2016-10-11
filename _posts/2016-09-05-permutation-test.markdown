@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Permutation Test: Explanation and Implementation in R"
-date:   2016-07-16
+date:   2016-09-12
 theme: cosmo
 ---
 
