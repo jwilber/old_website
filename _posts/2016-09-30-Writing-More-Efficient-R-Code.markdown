@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Writing Efficient R Code"
-date:   2016-09-30
+date:   2016-10-08
 ---
 [in progress]
 
