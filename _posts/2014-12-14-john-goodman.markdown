@@ -13,7 +13,7 @@ image: touring.jpg
 This is currently in Progress.
 
 In the meantime, I am having issues with markdown loading images stored locally (for homework assignments). Uploading the files to imgur failed, so I will use this post as a dump for images (while I need them).
-
+<img src="/images/movreg.png" />
 <img src="/images/l6p21.png" />
 <img src="/images/l6p22.png" />
 <img src="/images/l6p222.png" />
