@@ -14,6 +14,25 @@ This is currently in Progress.
 
 In the meantime, I am having issues with markdown loading images stored locally (for homework assignments). Uploading the files to imgur failed, so I will use this post as a dump for images (while I need them).
 
+<img src="/images/l6p21.png" />
+<img src="/images/l6p22.png" />
+<img src="/images/l6p222.png" />
+<img src="/images/l6p23.png" />
+<img src="/images/l6p8.png" />
+<img src="/images/l6p7.png" />
+<img src="/images/l6p5.png" />
+<img src="/images/l6p51.png" />
+<img src="/images/l6p52.png" />
+<img src="/images/lab6p4.png" />
+<img src="/images/l6p3.png" />
+<img src="/images/l6p2.png" />
+<img src="/images/l6p1.png" />
+
+
+
+
+
+
 
 <img src="/images/lab5p1.png" />
 <img src="/images/lab5p2.png" />
