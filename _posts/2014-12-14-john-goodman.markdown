@@ -16,6 +16,7 @@ In the meantime, I am having issues with markdown loading images stored locally 
 <img src="/images/movreg.png" />
 <img src="/images/lab6p6.png" />
 <img src="/images/proj3.png" />
+<img src="/images/proj3p2.png" />
 <img src="/images/l6p21.png" />
 <img src="/images/l6p22.png" />
 <img src="/images/l6p222.png" />
