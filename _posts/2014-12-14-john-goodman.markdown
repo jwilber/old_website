@@ -13,6 +13,33 @@ image: touring.jpg
 This is currently in Progress.
 
 In the meantime, I am having issues with markdown loading images stored locally (for homework assignments). Uploading the files to imgur failed, so I will use this post as a dump for images (while I need them).
+
+<img src="/images/tiled.png" />
+<img src="/images/D-mat.png" />
+<img src="/images/L-mat.png" />
+<img src="/images/lab6q3fin2.png" />
+<img src="/images/lab7q3fin3.png" />
+<img src="/images/lab6q3fin1.png" />
+<img src="/images/fin.png" />
+<img src="/images/lab7part2plot2.png" />
+<img src="/images/lab7part2plot3.png" />
+<img src="/images/lab7part2plot4.png" />
+<img src="/images/lab7part2plot5.png" />
+<img src="/images/lab7part2plot1.png" />
+<img src="/images/q2scatter1.png" />
+<img src="/images/q2scatter2.png" />
+<img src="/images/q2scatter3.png" />
+
+
+
+
+
+
+
+
+
+
+
 <img src="/images/movreg.png" />
 <img src="/images/lab6p6.png" />
 <img src="/images/proj3.png" />
