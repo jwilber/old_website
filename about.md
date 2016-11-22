@@ -7,7 +7,7 @@ title: About Me
 	<h1 class="pageTitle">About Me</h1>
 	<img src="{{ '/assets/img/walrus.JPG' =100x100| prepend: site.baseurl }}" alt=""> 
 	<p class="intro">Hey, hey, hey.</p>
-	<p>My name is Jared Wilber and I created this website so that I could post my own content related to data science. Specifically, that consists of  stuff related to statistics, algorithms, visualizations, or anything else I find interesting in the domain. I use primarily R and Python.</p>
+	<p>My name is Jared Wilber. I'm a statistics major at UC Berkeley with an emphasis on computer science. I created this website so that I could post my own content related to data science. Specifically, that consists of  stuff related to statistics, algorithms, visualizations, or anything else I find interesting in the domain. I use primarily R and Python.</p>
 	<p> Aside from the aforemention academia stuff, I also enjoy surfing, fitness, skateboarding, reading, traveling, music, and, last but not least, crying alone in cold showers.</p>
 	
 	<p> The walrus pic is unrelated to anything. I just think it looks really cool. </p>
