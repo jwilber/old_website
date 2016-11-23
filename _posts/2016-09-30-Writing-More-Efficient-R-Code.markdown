@@ -61,11 +61,11 @@ system.time(for(i in 1:1000) mean(sample(1:1000, 100)))
 The above expression analyzes the input expression and returns its time in seconds. The important column to pay attention to is the _elapsed_ column, as this reveals the total elapsed time required to evaluate our provided expression.
 
 #### `microbenchmark()`
-The `microbenchmark()` function is easily the most useful timing function currently in R. If you're going to remember one method to time your code, this is the one. `microbenchmark()` facilitates comparing runtime between multiple function calls. It takes in multiple functions as arguments and outputs summary runtime statistics. By default, it runs each functino 100 times and averages the results. You can change this option, as well as the unit of time to be measured via the `times` and `unit` arguments, respectively.
+The `microbenchmark()` function is easily the most useful timing function currently in R. If you're going to remember one method to time your code, this is the one. `microbenchmark()` facilitates comparing runtime between multiple function calls. It takes in multiple functions as arguments and outputs summary runtime statistics. By default, it runs each function 100 times and averages the results. You can change this option, as well as the unit of time to be measured via the `times` and `unit` arguments, respectively.
 
 To give an example, we'll compare the runtimes for several different implementations of the standard deviation function for a group of numbers.
 
-Recall the formula for standard deviation is as follows:
+Recall the formula for standard deviation is as follows: [insert latex]
 
 $$ s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2} $$
 
@@ -102,7 +102,7 @@ If we want to measure the speed of arbitrary chunks of our code (including the w
 
 * Preface the chunk of code you wish to time with `time_start <- proc.time()`. This initializes the timer.
 * Add `proc.time() - time_start` to the line just after the end of the chunk of code you'd like to time.
-In this manner, we can think of `proc.time()` as a sort of stop watch; we initialize a timer at the beginning of the code, time the code's duration, then initialize another timer at the end of the code and take the difference between our new timer and our old timer. The total duration of code is output under the `elapsed` column.
+In this manner, we can think of `proc.time()` as a sort of stop watch: we initialize a timer at the beginning of the code, time the code's duration, then initialize another timer at the end of the code and take the difference between our new timer and our old timer. The total duration of code is output under the `elapsed` column.
 
 ```R
 # proc.time() example
@@ -128,7 +128,7 @@ Timing functions is very important and an essential part of any efficient workfl
 ***
 
 #### Memory Pre-allocation
-One of the most important aspects of memory management in R is pre-allocating your memory. An important application of this is when dealing with vectors or any multi-dimensional objects. It's always much more efficient to initialize an object of the desired size than to grow it iteratively. 
+One of the most important aspects of memory management in R is pre-allocating your memory. An important application of this is when dealing with vectors or any multi-dimensional objects. It's always much more efficient to initialize an object of the desired size than to grow it iteratively. Let's see this for ourselves:
 
 ```R
 # Memory Pre-Allocation Example
@@ -169,8 +169,6 @@ Another important aspect in memory management is caching variables. Caching vari
 Memoizaton is a popular optimization technique in caching and refers to the technique of storing the results of function calls and returning the cached result when the same inputs occur again. This is very easy to implement in R thanks to the `memoise` package.
 
 
-
-
 Below I compare three functions: one with no variable caching, one where we cache our variables, and one that is fully memoised.
 
 ```R
@@ -209,7 +207,7 @@ microbenchmark(no_cache(c(1:1000)), si_cache(c(1:1000)), mem_cache(c(1:1000)))
 | si_cache(c(1:1000))  | 2631.881  | 2683.565  | 2785.6216  | 2738.47  | 2806.6720  | 3510.548   | 100   |
 | mem_cache(c(1:1000)) | 67.733    | 80.592    | 116.8227   | 130.80   | 138.5335   | 177.456    | 100   |
 
-Thus, caching values increases function speeds greatly
+We can see the difference each method makes: caching variables is almost ten times faster, while memoising is almost 200 times faster. Thus, when writing time-consuming code, it's important to consider whether or not the opportunity for caching or memoisation exists. If you can find any examples of the same value being called over-and-over again, you probably have a case for either option.
 
 ***
 
@@ -218,6 +216,8 @@ Thus, caching values increases function speeds greatly
 In R, compiling our code is a quick, easy way to have it run more efficiently. To achieve this, we'll use the `compiler` package, which compiles an expression into a byte code object What does this mean, and why is it effective? Byte code is simply machine code for a virtual machine. In general, lower level languages (e.g. C), compile their source code to machine code. Other languages, such as Python, compile their code to byte code.
 
 In standard R, expressions are parsed into a parse tree, which is then interpreted upon evaluation. With the `compiler` package, we can convert R's expressions into byte code, to be evalutaed via a stack-based virtual machine architecture. In the vast majority of cases this greatly improves runtime.
+
+[ insert example ]
 
 ```R
 # compiler example
@@ -228,7 +228,7 @@ library(compiler)
 
 #### Memory In Use
 
-To get pertinent information regarding memory used in session, you can use the `pryr` package. The `pryr` package contains multiple useful functions that yield memory usage information.
+To get pertinent information regarding memory used in session, you can use the `pryr` package. The `pryr` package contains multiple useful functions that yield memory usage information. Some examples are below:
 
 * `mem_change`: Returns change in memory (megabytes) before and after running the code.
 * `mem_used`: Returns total megabytes of ram used by R. 
