@@ -40,8 +40,15 @@ In the meantime, I am having issues with markdown loading images stored locally 
 
 
 
-
-
+<img src="/images/repi2.png" />
+<img src="/images/repi3.png" />
+<img src="/images/repi4.png" />
+<img src="/images/repi5.png" />
+<img src="/images/repi6.png" />
+<img src="/images/repi7.png" />
+<img src="/images/repi8.png" />
+<img src="/images/repi9.png" />
+<img src="/images/repi10.png" />
 
 <img src="/images/movreg.png" />
 <img src="/images/lab6p6.png" />
