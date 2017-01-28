@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Writing Efficient R Code"
-date:   2016-10-08
+date:   2016-12-08
 ---
-[in progress]
+
 
 <p class="intro"><span class="dropcap">T</span></p>he goal of this post is to (hopefully) introduce you to some methods that will aid you in writing more efficient R code. While I am by no means an R expert, I've picked up some techniques in my few years of using R that will hopefully prove beneficial to you!
 
