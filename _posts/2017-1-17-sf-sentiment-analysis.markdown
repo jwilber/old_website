@@ -5,11 +5,23 @@ date:   2015-01-17
 theme: cosmo
 ---
 
-# [ this post is in progress]
+<img src="/images/idw_interpolation_plot.png" />
 
 <p class="intro"><span class="dropcap">T</span>his post his post uses scraped twitter data in combination with R and several geospatial techniques to analyze whether or not people in San Francisco are happier near public parks</p>
 
 # Outline
+
+* intro
+* image
+* discussion of image
+* question: public parks? (why parks, not bars)
+* choose represenative
+* permutation test
+* conclusion
+* appendix
+*   - data
+*   - sentiment
+*   - geospatial stuff
 
 * intro  √
 * data/scraping techniques (1-2 sentences)  √
@@ -24,7 +36,22 @@ theme: cosmo
 
 ## Introduction
 
-In 2006, Twitter was created as a microblogging site. Today it is used by over 500 million people . As a dataset, Twitter has proved invaluable to researchers and has been utilized for a number of tasks, such as predicting financial markets, political affiliation, and analyzing the after-effects of natural disasters. It is also used for sentiment analysis, with results yielding similar resuls to traditional metrics, such as polling. In what follows, we'll combine standard sentiment analysis techniques with geography in an analysis to determine that public sentiment is different near public parks.
+In 2006, Twitter was created as a microblogging site. Today it is used by over 500 million people . As a dataset, Twitter has proved invaluable to researchers and has been utilized for a number of tasks, such as predicting financial markets, political affiliation, and analyzing the after-effects of natural disasters. It is also used for sentiment analysis, with results yielding similar resuls to traditional metrics, such as polling. In what follows, we'll combine sentiment analysis and geospatial techniques  in an analysis to determine that public sentiment is different near public parks.
+
+ In this case, sentiment is defined as being either negative or positive, on a scale from 0 to 1. If a tweet has a score near 0, it is negative, near 1, positive. Tweets with sentiment scores near 0.5 are considered neutral.
+
+The above map depicts sentiment distributed spatially about San Francisco, with bright areas corresponding to happier areas, and dark areas corresponding to negative areas. Viewing the data in this way allows us to gain insight we otherwise would have missed from the raw texts of the individual tweets.
+
+I can't expect every reader to be familiar with San Francisco, so below is an uncolored map for reference.
+
+[INSERT REGULAR MAP OF SAN FRANCISCO]
+
+We can observe that the greener (positive) colored areas of the sentiment map appear to be near the greener areas of the regular map. Is this just a cool coincidence, or did I pick that color on purpose? (Spoiler: I just chose the colors because they contrast). As a matter of fact, this result is to be expected, as least for surface-level expectations: Green-colored areas, such a public parks, probably are happier than other areas. It's one thing to infer this from an image, it's another to prove so mathematically. Concluding this from a single image is one thing, showing it mathematically is another.
+In what follows, we'll see with statistically significant resuls that people are happier 
+
+This article provides 
+
+
 
 ## Data
 
