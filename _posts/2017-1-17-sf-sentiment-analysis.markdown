@@ -16,7 +16,10 @@ In 2006, Twitter was created as a microblogging site. Today it is used by over 5
 The above map depicts sentiment distributed spatially about San Francisco, with brighter areas corresponding to happier areas, and darker areas corresponding to negative areas. Viewing the data in this way allows us to gain insight we otherwise would have missed from the raw texts of the individual tweets. Namely, we can see which locations are happier, which are madder.
 
 I can't expect every reader to be familiar with San Francisco, so below I show a colored and uncolored map of San Francisco side-by-side.
+
+
 [INSERT REGULAR MAP OF SAN FRANCISCO]
+
 
 We can observe that the greener (positive) colored areas of the sentiment map appear to be near the greener areas of the regular map. Is this just a cool coincidence, or did I pick that color on purpose? (Spoiler: I just chose the colors because they contrast). As a matter of fact, this result is to be expected, as least for surface-level expectations: Green-colored areas, such a public parks, probably are happier than other areas. It's one thing to infer this from an image, it's another to prove so mathematically. Concluding this from a single image is one thing, showing it mathematically is another.
 In what follows, we'll see with statistically significant resuls that people are happier 
