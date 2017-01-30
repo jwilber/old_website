@@ -32,9 +32,9 @@ Unlike the more traditional statistical tests (e.g. t-tests or F-tests), the per
 
 Carrying out a permutation test consists of 3 steps:
 
-  - 1 Come up with test statistic
-  - 2 Permute Data and Obtain Sampling Distribution
-  - 3 Conduct Permutation Test and Obtain P-Value
+  -  Come up with test statistic
+  -  Permute Data and Obtain Sampling Distribution
+  -  Conduct Permutation Test and Obtain P-Value
   
 In what follows, I'll go into each step in detail and, along the way, reveal how one could implement each step in R.
 
@@ -75,7 +75,7 @@ The difference in centrality and spread certainly give credence to the hypothesi
 ### 1. Come up with test statistic
 The first step of a permutation test is to come up with a relevant test-statistic. Recall that a test statistic is some numerical summary of our data that can be used during a statistical test to distinguish the null hypothesis from the alternative hypothesis. For a permutation test we can use essentially anything for our test statistic. The goal of our analysis is to detect any difference between the treatment and control groups. Therefore, we'll employ the difference of mean values between the two groups as our test statistic. 
 
-{% highlight ruby %}
+{% highlight R %}
 diffMeans <- function(data, hasTrt){
   # computes our test statistics: the difference of means
   # hasTrt: boolean vector, TRUE if has treatment
@@ -243,6 +243,3 @@ I hope that the above example revealed the utility of a permutation test.
 In my next post, I'll give an applied example of the permutation test where we test whether or not John Goodman has a significant effect on movies being "hits" or not. 
 Thanks for reading and I hope you learned something!
 
-
-
-*Note,  this post was inspired by an assignment from Stat 158: Experimental Design, a course I took at UC Berkeley under Elizabeth Purdom and Christine Ho.*
