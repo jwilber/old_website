@@ -13,7 +13,7 @@ In 2006, Twitter was created as a microblogging site. Today it is used by over 5
 
 <img src="/images/idw_interpolation_plot.png" />
 
-<img src="/images/plainsf.png" width="100" height="100" />
+<img src="/images/plainsf.png" width="400" height="400" />
 The above map depicts sentiment distributed spatially about San Francisco, with brighter areas corresponding to happier areas, and darker areas corresponding to negative areas. Viewing the data in this way allows us to gain insight we otherwise would have missed from the raw texts of the individual tweets. Namely, we can see which locations are happier, which are madder.
 
 I can't expect every reader to be familiar with San Francisco, so below I show a colored and uncolored map of San Francisco side-by-side.
