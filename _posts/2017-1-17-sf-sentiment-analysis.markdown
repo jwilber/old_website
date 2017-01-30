@@ -11,9 +11,9 @@ theme: cosmo
 
 In 2006, Twitter was created as a microblogging site. Today it is used by over 500 million people . As a dataset, Twitter has proved invaluable to researchers and has been utilized for a number of tasks, such as predicting financial markets, political affiliation, and analyzing the after-effects of natural disasters.  In what follows, we'll combine sentiment analysis and geospatial techniques to determine that public sentiment is different near public parks.
 
-<img src="/images/idw_interpolation_plot.png" />
+<img src="/images/idw_interpolation_plot.png" width="500" height="500" />
 
-<img src="/images/plainsf.png" width="600" height="410" />
+<img src="/images/plainsf.png" width="500" height="500" />
 The above map depicts sentiment distributed spatially about San Francisco, with brighter areas corresponding to happier areas, and darker areas corresponding to negative areas. Viewing the data in this way allows us to gain insight we otherwise would have missed from the raw texts of the individual tweets. Namely, we can see which locations are happier, which are madder.
 
 I can't expect every reader to be familiar with San Francisco, so below I show a colored and uncolored map of San Francisco side-by-side.
