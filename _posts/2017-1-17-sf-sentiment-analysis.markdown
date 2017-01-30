@@ -22,8 +22,25 @@ I can't expect every reader to be familiar with San Francisco, so below I show a
 [INSERT REGULAR MAP OF SAN FRANCISCO]
 
 
-We can observe that the greener (positive) colored areas of the sentiment map appear to be near the greener areas of the regular map. Is this just a cool coincidence, or did I pick that color on purpose? (Spoiler: I chose the colors because they contrast). As a matter of fact, this result is to be expected, as least for surface-level expectations: Green-colored areas, such a public parks, probably are happier than other areas. It's one thing to infer this from an image, it's another to prove so mathematically. Concluding this from a single image is one thing, showing it mathematically is another.
-In what follows, we'll see with statistically significant resuls that people are happier 
+We can observe that the greener (positive) colored areas of the sentiment map appear to be near the greener areas of the regular map. Is this just a cool coincidence, or did I pick that color on purpose? (Spoiler: I chose the colors because they contrast). As a matter of fact, this result is to be expected, as least from a high-level standpoint: Green-colored areas, such a public parks, probably are happier than other areas. 
+
+That said, concluding this from a single image is one thing, showing it mathematically is another.
+In what follows, we'll see with statistically significant resuls that people**** (who tweet) are indeed happier near public parks.
+
+Let's get to it.
+
+As a first measure, let's decide which parks we'll be using. San Francisco has plenty of public parks, so we'll choose locations to be as spread from each other as possible so as to capture a more representative sample. We'll use the following locations.
+
+|             Park            | Longitude | Latitude |
+|:---------------------------:|-----------|----------|
+| Dolores Park                | -122.4271 | 37.7598  |
+| Golden Gate Park            | -122.4862 | 37.7694  |
+| Lafayette Park              | -122.4276 | 37.7916  |
+| Park Merced                 | -122.4810 | 37.7183  |
+| John Mclaren Park           | -122.4194 | 37.7193  |
+| Victoria Manalo Draves Park | -122.4061 | 37.7771  |
+| Mountain Lake Park          | -122.4697 | 37.7873  |
+
 
 This article provides 
 
