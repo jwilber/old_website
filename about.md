@@ -5,7 +5,7 @@ title: About Me
 
 <div class="post">
 	<h1 class="pageTitle">About Me</h1>
-	<img src="{{ '/assets/img/walrus.JPG' =100x100| prepend: site.baseurl }}" alt=""> 
+	<!-- <img src="{{ '/assets/img/walrus.JPG' =100x100| prepend: site.baseurl }}" alt=""> -->
 	<img src="/images/me.png" width="150" height="150"/>
 	<p class="intro">Hey, hey, hey.</p>
 	<p>My name is Jared Wilber. I'm a statistics major at UC Berkeley with an emphasis in computer science. I created this website so that I could post my own content related to data science. Specifically, that consists of  stuff related to statistics, algorithms, visualizations, or anything else I find interesting in the domain. I use primarily R and Python. Right now everything is R related, but pretty soon I'll be adding Python and Java implementations. Stay tuned!</p>
