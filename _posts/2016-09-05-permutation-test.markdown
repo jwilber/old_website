@@ -10,18 +10,14 @@ theme: cosmo
 
 # Introduction
 
-The permutation test, also known as the randomization test, is a nonparametric method of statistical inference that tests a specific null hypothesis that the treatment levels we are comparing are completely equivalent and serve only as labels; i.e. that the responses we observed for our units would be the same no matter which treatments had been applied.
+The permutation test, also known as the randomization test, is a nonparametric method of statistical inference that tests a specific null hypothesis that the treatment levels we are comparing are completely equivalent and serve only as labels
 
 Put more simply, when considering a permutation/randomization based analysis, our null hypothesis dictates that our response values are equally likely of ending up in any treatment group. Then, under that hypothesis, permuting our data will yield no effect on the outcome. 
 
-Our alternative hypothesis, then, dictates that the data do come from different distributions; that there does exist some difference between treatments for one or more subjects.
+Our alternative hypothesis dictates that the data do come from different distributions; that there does exist some difference between treatments for one or more subjects.
 
 To construct a permutation test, we select a test statistic for
-the data and then get the distribution of that test statistic under the permutation null hypothesis. This is akin to permuting our data and calculcating the test statistic for each permutation. 
-
-The permutation test p-value is the probability (under the null
-randomization distribution) of getting a test statistic as extreme or
-more extreme than the one we observed.
+the data, permute the data, and then calculate the test statistic for each permutation and build a test statistic distribution. 
 
 An expression for a two-tailed permutation test consisting of B permutations is shown below:
 
