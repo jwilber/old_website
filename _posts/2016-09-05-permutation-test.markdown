@@ -63,8 +63,8 @@ ourData
 
 We'll use the following hypothesis scheme:
 
-  - Null Hypothesis: The means for the Control (FALSE) and Treatment (TRUE) groups are the same; i.e. the treatment has no effect on survival outcome.
-  - Alternative Hypothesis: The means for the Control (FALSE) and Treatment (TRUE) groups are different; i.e. the treatment does have some effect on survival times.
+  - ***Null Hypothesis***: The means for the Control (FALSE) and Treatment (TRUE) groups are the same; i.e. the treatment has no effect on survival outcome.
+  - ***Alternative Hypothesis***: The means for the Control (FALSE) and Treatment (TRUE) groups are different; i.e. the treatment does have some effect on survival times.
 
 When performing any analysis, it's always a good idea to carry out some exploratory data analysis (EDA). For this example, we'll be brief and create a plot to visualize what we expect the outcome of our test will be:
 
