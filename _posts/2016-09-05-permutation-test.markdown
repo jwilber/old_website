@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Permutation Test: Explanation and Implementation in R"
-date:   2016-09-12
+date:   2017-01-12
 theme: cosmo
 ---
 
@@ -45,10 +45,11 @@ In what follows, I'll go into each step in detail and, along the way, reveal how
 For ease of reproducibility, we'll create our own dataset. 
 
 We'll create a data set with two columns:
-  - SURVIVAL: Survival in months after some operation was performed.
-  - Treatment: A boolean; A value of TRUE indicates that the unit received post-operation treatment. FALSE indicates that they did not (Control group).
+
+  - **SURVIVAL**: Survival in months after some operation was performed.
+  - **TREATMENT**: A boolean; A value of *TRUE* indicates that the unit received post-operation treatment. *FALSE* indicates that they did not (Control group).
   
-For example, the response values in our dataset may refer to survival times after some breast cancer operation, where our "TREATMENT" refers to whether or not the individuals received some post-operation treatment or not.
+For example, the response values in our dataset may refer to survival times after some breast cancer operation, where our **TREATMENT** refers to whether or not the individuals received some post-operation treatment or not.
 
 The data is defined and showcased below:
 
