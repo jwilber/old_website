@@ -11,15 +11,13 @@ theme: cosmo
 
 In 2006, Twitter was created as a microblogging site. Today it is used by over 500 million people . As a dataset, Twitter has proved invaluable to researchers and has been utilized for a number of tasks, such as predicting financial markets, political affiliation, and analyzing the after-effects of natural disasters.  In what follows, we'll combine sentiment analysis and geospatial techniques to determine that public sentiment is different near public parks.
 
-<img src="/images/idw_interpolation_plot.png" width="500" height="500" />
+<img src="/images/idw_interpolation_plot.png" width="650" height="500" />
 
-<img src="/images/plainsf.png" width="500" height="500" />
 The above map depicts sentiment distributed spatially about San Francisco, with brighter areas corresponding to happier areas, and darker areas corresponding to negative areas. Viewing the data in this way allows us to gain insight we otherwise would have missed from the raw texts of the individual tweets. Namely, we can see which locations are happier, which are madder.
 
-I can't expect every reader to be familiar with San Francisco, so below I show a colored and uncolored map of San Francisco side-by-side.
+I can't expect every reader to be familiar with San Francisco, so below I show a colored  map of San Francisco for all you non-locals.
 
-
-[INSERT REGULAR MAP OF SAN FRANCISCO]
+<img src="/images/plainsf.png" width="650" height="500" />
 
 
 We can observe that the greener (positive) colored areas of the sentiment map appear to be near the greener areas of the regular map. Is this just a cool coincidence, or did I pick that color on purpose? (Spoiler: I chose the colors because they contrast). As a matter of fact, this result is to be expected, as least from a high-level standpoint: Green-colored areas, such a public parks, probably are happier than other areas. 
@@ -29,7 +27,9 @@ In what follows, we'll see with statistically significant resuls that people****
 
 Let's get to it.
 
-As a first measure, let's decide which parks we'll be using. San Francisco has plenty of public parks, so we'll choose locations to be as spread from each other as possible so as to capture a more representative sample. We'll use the following locations.
+To test our hypothesis, we'll measure the average sentiment of people who tweet near public parks and compare it to the average sentiment of those tweets not near public parks.
+
+San Francisco has plenty of public parks, and we don't want to measure multiple parks in the same general vicinity. Thus, we'll choose parks that are distant from each other but together compose most of San Francisco. This way our sample is as representative as possible.
 
 |             Park            | Longitude | Latitude |
 |:---------------------------:|-----------|----------|
@@ -41,6 +41,10 @@ As a first measure, let's decide which parks we'll be using. San Francisco has p
 | Victoria Manalo Draves Park | -122.4061 | 37.7771  |
 | Mountain Lake Park          | -122.4697 | 37.7873  |
 
+Plotted graphically, these public parks appear to meet our critera.
+
+
+<img src="/images/pubparks.png" width="400" height="300" />
 
 This article provides 
 
