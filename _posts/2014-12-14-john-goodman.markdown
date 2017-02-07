@@ -1,18 +1,22 @@
 ---
 layout: post
-title:  "John Goodman: Hit Status"
+title:  "Geospatial Plot Storage"
 date:   2014-12-14
 image: touring.jpg
 ---
 
-<p class="intro"><span class="dropcap">D</span> oes John Goodman have a significant effect on a movie becoming a hit or not? Find out via a permutation test application. [CURRENTLY IN PROGRESS] </p>
+Just a bunch of geospatial related plots I've done. Dumping them here.
 
 
-# J G
+<img src="/images/geo1.png" />
+<img src="/images/geo2.png" />
+<img src="/images/geo3.png" />
+<img src="/images/geo4.png" />
+<img src="/images/geomath.png" />
 
-This is currently in Progress.
 
-In the meantime, I am having issues with markdown loading images stored locally (for homework assignments). Uploading the files to imgur failed, so I will use this post as a dump for images (while I need them).
+
+
 
 <img src="/images/tiled.png" />
 <img src="/images/D-mat.png" />
