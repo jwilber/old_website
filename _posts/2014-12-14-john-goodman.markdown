@@ -15,7 +15,11 @@ Just a bunch of geospatial related plots I've done. Dumping them here.
 <img src="/images/geomath.png" />
 
 
-
+<img src="/images/dt1.png" />
+<img src="/images/dt2.png" />
+<img src="/images/dt2.png" />
+<img src="/images/dt4.png" />
+<img src="/images/dtlast.png" />
 
 
 <img src="/images/tiled.png" />
