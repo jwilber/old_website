@@ -14,7 +14,7 @@ Just a bunch of geospatial related plots I've done. Dumping them here.
 <img src="/images/geo4.png" />
 <img src="/images/geomath.png" />
 
-
+<img src="/images/gp.png" />
 <img src="/images/dt1.png" />
 <img src="/images/dt2.png" />
 <img src="/images/dt2.png" />
