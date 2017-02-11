@@ -141,13 +141,15 @@ Counting from left-to-right, top-to-bottom, we can see that the first three plot
 
 This decreasing line indicates that average sentence lengths decrease over time. Is this downward slope just a coincidence, or is this trend legitimately occuring? Analyzing the average yearly sentence length for each of the four groups (via ANOVA) determines that this result is statistically significant. 
 
-So sentences are getting shorted over time. Why is this the case? I can think of three possible reasons for this occuring:
+So sentences are getting shorted over time. Why is this the case? I can think of four possible reasons for this occuring:
 
 1. Information Compression: With the influx of information availability over the years (printer press to smart phone), information has become more and more compressed. Perhaps the plot reflects this trend, with sentences having become more concise and to the point. 
 
 2. A linear decrease in attention spans.
 
 3. Network pressure: A State of the Union Address can technically go on for hours. Radios/networks airing the speech may be placing pressure on the duration of the speech.
+
+4. Stylistic Evolution (as pointed out by Katherine Chen)
 
 While the phenomena is indeed occuring, the above three explanations are applicable only to an extent; they are weak in that they don't adequately explain why such trends exist for our earliest clusters. 
 
