@@ -7,7 +7,8 @@ image: touring.jpg
 
 Just a bunch of geospatial related plots I've done. Dumping them here.
 
-
+<img src="/images/geo187idw.png" />
+<img src="/images/geo187kernel.png" />
 <img src="/images/geo1.png" />
 <img src="/images/geo2.png" />
 <img src="/images/geo3.png" />
